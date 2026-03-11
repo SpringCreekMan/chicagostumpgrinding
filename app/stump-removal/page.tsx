@@ -50,6 +50,7 @@ export default function StumpRemovalPage() {
         subheadline="Full stump and root extraction for new construction, landscaping renovations, or a completely clean yard. Free on-site estimates."
         variant="service"
         badgeText="Full Root Extraction"
+        backgroundImage="/images/hero-stump-grinding.jpg"
       />
 
       <section className="section">

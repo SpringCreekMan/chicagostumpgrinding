@@ -201,12 +201,12 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
                 Get a Free Estimate
               </Link>
             </div>
-            <div style={{ borderRadius: 4, overflow: 'hidden', background: 'var(--green-dark)', aspectRatio: '4/3', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ textAlign: 'center', color: 'rgba(255,255,255,.25)', fontFamily: 'var(--font-serif)', fontSize: 13, fontStyle: 'italic', padding: 20 }}>
-                <div style={{ fontSize: 48, marginBottom: 12 }}>🌳</div>
-                Professional {serviceLabel.toLowerCase()}<br />in {suburb.name}, IL
-                {/* TODO: Replace with real <Image> when photos available */}
-              </div>
+            <div style={{ borderRadius: 4, overflow: 'hidden', aspectRatio: '4/3' }}>
+              <img
+                src={isStump ? '/images/stump-grinder-action.jpg' : '/images/hero-tree-service.jpg'}
+                alt={`${serviceLabel} in ${suburb.name}, IL`}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
             </div>
           </div>
         </div>

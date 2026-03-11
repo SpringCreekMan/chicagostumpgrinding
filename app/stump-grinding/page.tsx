@@ -94,6 +94,9 @@ export default function StumpGrindingPage() {
                 <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300 }}>
                   It&apos;s the most cost-effective and efficient way to eliminate a stump, and it&apos;s the method chosen by the vast majority of homeowners in the Chicago area.
                 </p>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 24 }}>
+                  <img src="/images/stump-grinder-action.jpg" alt="Professional stump grinding with Vermeer machine" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
               </div>
 
               <div style={{ marginBottom: 48 }}>
