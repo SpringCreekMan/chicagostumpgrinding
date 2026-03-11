@@ -68,7 +68,7 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
       <section style={{ position: 'relative', minHeight: 520, display: 'flex', alignItems: 'stretch', background: 'var(--green-deep)', overflow: 'hidden' }}>
         {/* Background layers */}
         {suburb.heroImage ? (
-          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${suburb.heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.35 }} />
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${suburb.heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.55 }} />
         ) : (
           <>
             <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 900px 600px at 75% 30%, rgba(45,122,65,.35) 0%, transparent 60%), linear-gradient(175deg, #071a0d 0%, #0d2714 35%, #143f20 65%, #1a5028 100%)' }} />
