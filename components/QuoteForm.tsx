@@ -42,12 +42,29 @@ export default function QuoteForm({ compact = false }: QuoteFormProps) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    setLoading(false);
-    setSubmitted(true);
+    setError("");
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, source: "quote-page" }),
+      });
+      const data = await res.json();
+      if (!data.success) {
+        setError(data.error || "Something went wrong. Please try again.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setError("Network error. Please try again or call us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -132,6 +149,10 @@ export default function QuoteForm({ compact = false }: QuoteFormProps) {
             <a href={PHONE_HREF} style={{ textDecoration: 'underline' }}>{PHONE}</a>
           </p>
         </div>
+      )}
+
+      {error && (
+        <p style={{ color: '#c53030', fontSize: 14, marginTop: 16, textAlign: 'center' }}>{error}</p>
       )}
 
       <button

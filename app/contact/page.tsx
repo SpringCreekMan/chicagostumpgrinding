@@ -5,7 +5,7 @@ import { PHONE, PHONE_HREF, EMAIL, SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact Us | Chicago Stump Grinding",
   description:
-    "Contact Chicago Stump Grinding for stump grinding, stump removal, and tree service. Call (312) 555-0188 or send us a message for a free estimate.",
+    "Contact Chicago Stump Grinding for stump grinding, stump removal, and tree service. Call (630) 716-9336 or send us a message for a free estimate.",
   alternates: { canonical: `${SITE_URL}/contact` },
 };
 

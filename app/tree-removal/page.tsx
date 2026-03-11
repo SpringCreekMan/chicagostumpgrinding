@@ -8,7 +8,7 @@ import { SITE_URL, PHONE, PHONE_HREF } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Tree Removal Chicago | Safe Tree Removal Across Chicago Suburbs",
   description:
-    "Professional tree removal in Chicago and suburbs. Dead, damaged, or dangerous trees removed safely. Full cleanup included. Free quotes. Call (312) 555-0188.",
+    "Professional tree removal in Chicago and suburbs. Dead, damaged, or dangerous trees removed safely. Full cleanup included. Free quotes. Call (630) 716-9336.",
   alternates: { canonical: `${SITE_URL}/tree-removal` },
 };
 

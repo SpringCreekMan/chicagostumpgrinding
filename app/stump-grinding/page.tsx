@@ -59,7 +59,7 @@ const serviceSchema = {
     "@type": "LocalBusiness",
     name: "Chicago Stump Grinding",
     url: SITE_URL,
-    telephone: "+13125550188",
+    telephone: "+16307169336",
   },
   areaServed: "Chicago Metropolitan Area, IL",
   description:

@@ -175,7 +175,7 @@ export const BLOG_POSTS: BlogPost[] = [
 <h2>When's the Best Time to Schedule?</h2>
 <p>Stump grinding can be done year-round in the Chicago area. Spring and fall are our busiest seasons, so same-week scheduling is easier in winter or summer. We always aim for fast turnaround regardless of season.</p>
 
-<p>Ready to schedule? <a href="/request-quote">Request your free quote online</a> or call us at <a href="tel:+13125550188">(312) 555-0188</a>.</p>
+<p>Ready to schedule? <a href="/request-quote">Request your free quote online</a> or call us at <a href="tel:+16307169336">(630) 716-9336</a>.</p>
     `,
   },
   {

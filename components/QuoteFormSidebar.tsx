@@ -11,14 +11,43 @@ interface Props {
 export default function QuoteFormSidebar({ suburb = 'Chicago Area', county = 'DuPage County' }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    // TODO: wire to real backend — POST to /api/quote or Formspree
-    await new Promise((r) => setTimeout(r, 800));
-    setSubmitted(true);
-    setLoading(false);
+    setError('');
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: fd.get('name') as string,
+      phone: fd.get('phone') as string,
+      email: fd.get('email') as string,
+      address: fd.get('address') as string,
+      city: suburb,
+      service: fd.get('service') as string,
+      stumpSize: fd.get('stumpSize') as string,
+      message: fd.get('message') as string,
+      source: 'sidebar',
+      suburb,
+      county,
+    };
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!data.success) {
+        setError(data.error || 'Something went wrong. Please try again.');
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setError('Network error. Please try again or call us directly.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -58,19 +87,19 @@ export default function QuoteFormSidebar({ suburb = 'Chicago Area', county = 'Du
         ) : (
           <form onSubmit={handleSubmit}>
             <FormGroup label="Your Name">
-              <input className="form-input" type="text" placeholder="First & Last Name" required />
+              <input name="name" className="form-input" type="text" placeholder="First & Last Name" required />
             </FormGroup>
             <FormGroup label="Phone Number">
-              <input className="form-input" type="tel" placeholder="(630) 555-0000" required />
+              <input name="phone" className="form-input" type="tel" placeholder="(630) 555-0000" required />
             </FormGroup>
             <FormGroup label="Email Address">
-              <input className="form-input" type="email" placeholder="you@example.com" />
+              <input name="email" className="form-input" type="email" placeholder="you@example.com" />
             </FormGroup>
             <FormGroup label="Property Address">
-              <input className="form-input" type="text" placeholder={`Street address in ${suburb}`} required />
+              <input name="address" className="form-input" type="text" placeholder={`Street address in ${suburb}`} required />
             </FormGroup>
             <FormGroup label="Service Needed">
-              <select className="form-input">
+              <select name="service" className="form-input">
                 <option>Stump Grinding</option>
                 <option>Stump Removal</option>
                 <option>Tree Trimming</option>
@@ -79,7 +108,7 @@ export default function QuoteFormSidebar({ suburb = 'Chicago Area', county = 'Du
               </select>
             </FormGroup>
             <FormGroup label="Approx. Stump Size">
-              <select className="form-input">
+              <select name="stumpSize" className="form-input">
                 <option>Small (under 12&quot;)</option>
                 <option>Medium (12–24&quot;)</option>
                 <option>Large (24–36&quot;)</option>
@@ -88,8 +117,12 @@ export default function QuoteFormSidebar({ suburb = 'Chicago Area', county = 'Du
               </select>
             </FormGroup>
             <FormGroup label="Message (optional)">
-              <textarea className="form-input" placeholder="Any details about your job..." />
+              <textarea name="message" className="form-input" placeholder="Any details about your job..." />
             </FormGroup>
+
+            {error && (
+              <p style={{ color: '#c53030', fontSize: 13, textAlign: 'center', marginBottom: 12 }}>{error}</p>
+            )}
 
             <button
               type="submit"

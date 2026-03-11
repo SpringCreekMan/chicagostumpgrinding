@@ -44,7 +44,7 @@ const localBusinessSchema = {
   description:
     "Professional stump grinding, stump removal, and tree service across Chicago and surrounding suburbs.",
   url: SITE_URL,
-  telephone: "+13125550188",
+  telephone: "+16307169336",
   email: "info@chicagostumpgrinding.com",
   areaServed: {
     "@type": "State",

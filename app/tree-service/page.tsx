@@ -23,7 +23,7 @@ const FAQ_TREE = [
   },
   {
     q: "Do you offer emergency tree service?",
-    a: "Yes. Storm damage and hazardous tree situations are prioritized. Call us directly at (312) 555-0188 for emergency response.",
+    a: "Yes. Storm damage and hazardous tree situations are prioritized. Call us directly at (630) 716-9336 for emergency response.",
   },
   {
     q: "Can you handle large trees near power lines?",
