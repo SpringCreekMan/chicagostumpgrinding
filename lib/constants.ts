@@ -93,28 +93,22 @@ export const PROCESS_STEPS = [
 
 export const TESTIMONIALS = [
   {
-    name: "Jennifer M.",
-    city: "Naperville",
-    stars: 5,
     text: "Had three large stumps from a storm. They came out the next day, ground everything down, and cleaned up perfectly. Couldn't even tell they were there. Highly recommend.",
+    name: "Jennifer M.",
+    location: "Naperville, IL",
+    initials: "JM",
   },
   {
-    name: "Tom K.",
-    city: "Hinsdale",
-    stars: 5,
     text: "Very professional and fair pricing. They quoted me on the spot and showed up when they said they would. The yard looks great and I'll definitely use them again.",
+    name: "Tom K.",
+    location: "Hinsdale, IL",
+    initials: "TK",
   },
   {
-    name: "Sarah L.",
-    city: "Wheaton",
-    stars: 5,
     text: "Fast, affordable, and thorough. I got three quotes and they were the most competitive. The crew was respectful of my landscaping and left zero mess.",
-  },
-  {
-    name: "Mike D.",
-    city: "Elmhurst",
-    stars: 5,
-    text: "I had an old oak stump that had been sitting for years. They ground it down in about 30 minutes. Unbelievable equipment. Very happy with the service.",
+    name: "Sarah L.",
+    location: "Wheaton, IL",
+    initials: "SL",
   },
 ];
 

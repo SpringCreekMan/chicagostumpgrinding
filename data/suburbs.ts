@@ -2,6 +2,7 @@ export type SuburbPageType = "stump-grinding" | "tree-service";
 
 export interface SuburbData {
   slug: string;
+  name: string;
   city: string;
   county: string;
   state: string;
@@ -13,6 +14,9 @@ export interface SuburbData {
   commonJobs: string[];
   metaTitle: string;
   metaDescription: string;
+  heroSubtitle?: string;
+  localExpertiseParagraph?: string;
+  faqs?: Array<{ question: string; answer: string }>;
 }
 
 export const SUBURBS: SuburbData[] = [
@@ -20,6 +24,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "naperville-stump-grinding",
     city: "Naperville",
+    name: "Naperville",
     county: "DuPage & Will",
     state: "IL",
     serviceType: "stump-grinding",
@@ -43,6 +48,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "hinsdale-stump-grinding",
     city: "Hinsdale",
+    name: "Hinsdale",
     county: "DuPage",
     state: "IL",
     serviceType: "stump-grinding",
@@ -66,6 +72,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "downers-grove-stump-grinding",
     city: "Downers Grove",
+    name: "Downers Grove",
     county: "DuPage",
     state: "IL",
     serviceType: "stump-grinding",
@@ -89,6 +96,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "glen-ellyn-stump-grinding",
     city: "Glen Ellyn",
+    name: "Glen Ellyn",
     county: "DuPage",
     state: "IL",
     serviceType: "stump-grinding",
@@ -112,6 +120,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "oak-brook-stump-grinding",
     city: "Oak Brook",
+    name: "Oak Brook",
     county: "DuPage",
     state: "IL",
     serviceType: "stump-grinding",
@@ -135,6 +144,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "western-springs-stump-grinding",
     city: "Western Springs",
+    name: "Western Springs",
     county: "Cook",
     state: "IL",
     serviceType: "stump-grinding",
@@ -158,6 +168,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "la-grange-stump-grinding",
     city: "La Grange",
+    name: "La Grange",
     county: "Cook",
     state: "IL",
     serviceType: "stump-grinding",
@@ -181,6 +192,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "burr-ridge-stump-grinding",
     city: "Burr Ridge",
+    name: "Burr Ridge",
     county: "DuPage & Cook",
     state: "IL",
     serviceType: "stump-grinding",
@@ -204,6 +216,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "elmhurst-stump-grinding",
     city: "Elmhurst",
+    name: "Elmhurst",
     county: "DuPage",
     state: "IL",
     serviceType: "stump-grinding",
@@ -227,6 +240,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "wheaton-stump-grinding",
     city: "Wheaton",
+    name: "Wheaton",
     county: "DuPage",
     state: "IL",
     serviceType: "stump-grinding",
@@ -250,6 +264,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "darien-stump-grinding",
     city: "Darien",
+    name: "Darien",
     county: "DuPage",
     state: "IL",
     serviceType: "stump-grinding",
@@ -273,6 +288,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "lemont-stump-grinding",
     city: "Lemont",
+    name: "Lemont",
     county: "Cook, DuPage & Will",
     state: "IL",
     serviceType: "stump-grinding",
@@ -296,6 +312,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "homer-glen-stump-grinding",
     city: "Homer Glen",
+    name: "Homer Glen",
     county: "Will",
     state: "IL",
     serviceType: "stump-grinding",
@@ -321,6 +338,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "hinsdale-tree-service",
     city: "Hinsdale",
+    name: "Hinsdale",
     county: "DuPage",
     state: "IL",
     serviceType: "tree-service",
@@ -344,6 +362,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "glen-ellyn-tree-service",
     city: "Glen Ellyn",
+    name: "Glen Ellyn",
     county: "DuPage",
     state: "IL",
     serviceType: "tree-service",
@@ -367,6 +386,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "oak-brook-tree-service",
     city: "Oak Brook",
+    name: "Oak Brook",
     county: "DuPage",
     state: "IL",
     serviceType: "tree-service",
@@ -390,6 +410,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "western-springs-tree-service",
     city: "Western Springs",
+    name: "Western Springs",
     county: "Cook",
     state: "IL",
     serviceType: "tree-service",
@@ -413,6 +434,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "burr-ridge-tree-service",
     city: "Burr Ridge",
+    name: "Burr Ridge",
     county: "DuPage & Cook",
     state: "IL",
     serviceType: "tree-service",
@@ -436,6 +458,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "elmhurst-tree-service",
     city: "Elmhurst",
+    name: "Elmhurst",
     county: "DuPage",
     state: "IL",
     serviceType: "tree-service",
@@ -459,6 +482,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "wheaton-tree-service",
     city: "Wheaton",
+    name: "Wheaton",
     county: "DuPage",
     state: "IL",
     serviceType: "tree-service",
@@ -482,6 +506,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "lemont-tree-service",
     city: "Lemont",
+    name: "Lemont",
     county: "Cook, DuPage & Will",
     state: "IL",
     serviceType: "tree-service",
@@ -505,6 +530,7 @@ export const SUBURBS: SuburbData[] = [
   {
     slug: "homer-glen-tree-service",
     city: "Homer Glen",
+    name: "Homer Glen",
     county: "Will",
     state: "IL",
     serviceType: "tree-service",
@@ -535,8 +561,6 @@ export function getSuburbsByService(serviceType: SuburbPageType): SuburbData[] {
   return SUBURBS.filter((s) => s.serviceType === serviceType);
 }
 
-export function getNearbySuburbs(slug: string, nearbySlugList: string[]): SuburbData[] {
-  return nearbySlugList
-    .map((s) => SUBURBS.find((sub) => sub.slug === s))
-    .filter(Boolean) as SuburbData[];
+export function getNearbySuburbs(currentSlug: string, count: number): SuburbData[] {
+  return SUBURBS.filter((s) => s.slug !== currentSlug).slice(0, count);
 }

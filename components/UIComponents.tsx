@@ -68,26 +68,26 @@ export function ServiceCard({ icon, title, description, href }: ServiceCardProps
 
 // Testimonials
 interface Testimonial {
-  name: string;
-  city: string;
-  stars: number;
   text: string;
+  name: string;
+  location: string;
+  initials: string;
 }
 
 export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {testimonials.map((t, i) => (
         <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 card-hover">
           <div className="flex gap-0.5 mb-3">
-            {Array.from({ length: t.stars }).map((_, s) => (
+            {Array.from({ length: 5 }).map((_, s) => (
               <span key={s} className="text-yellow-400 text-lg">★</span>
             ))}
           </div>
           <p className="text-gray-700 text-sm leading-relaxed italic mb-4">&ldquo;{t.text}&rdquo;</p>
           <div>
             <p className="font-semibold text-navy-900 text-sm">{t.name}</p>
-            <p className="text-gray-500 text-xs">{t.city}, IL</p>
+            <p className="text-gray-500 text-xs">{t.location}</p>
           </div>
         </div>
       ))}

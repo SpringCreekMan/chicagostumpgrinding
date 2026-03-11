@@ -1,173 +1,164 @@
-"use client";
-import { useState } from "react";
-import Link from "next/link";
-import { PHONE, PHONE_HREF, SITE_NAME } from "@/lib/constants";
+'use client';
 
-const NAV_SERVICES = [
-  { href: "/stump-grinding", label: "Stump Grinding" },
-  { href: "/stump-removal", label: "Stump Removal" },
-  { href: "/tree-service", label: "Tree Service" },
-  { href: "/tree-removal", label: "Tree Removal" },
-];
+import Link from 'next/link';
+import { useState } from 'react';
+import { SITE_NAME, PHONE, PHONE_HREF } from '@/lib/constants';
 
 const NAV_LINKS = [
-  { href: "/service-areas", label: "Service Areas" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
+  { label: 'Stump Grinding', href: '/stump-grinding' },
+  { label: 'Stump Removal',  href: '/stump-removal' },
+  { label: 'Tree Service',   href: '/tree-service' },
+  { label: 'Tree Removal',   href: '/tree-removal' },
+  { label: 'Service Areas',  href: '/service-areas' },
+  { label: 'About',          href: '/about' },
 ];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-navy-900 text-white sticky top-0 z-50 shadow-lg">
-      {/* Top bar */}
-      <div className="bg-brand-dark text-sm py-1.5">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <span className="text-navy-300 text-xs">Chicago&apos;s Local Stump & Tree Specialists — Fully Insured</span>
-          <a
-            href={PHONE_HREF}
-            className="font-semibold text-orange-400 hover:text-orange-300 transition-colors"
-          >
-            {PHONE}
+    <>
+      {/* ── UTILITY BAR ── */}
+      <div style={{ background: 'var(--green-deep)', padding: '9px 0' }}>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ fontSize: '12.5px', color: 'rgba(255,255,255,.55)', letterSpacing: '.02em' }}>
+            Serving DuPage · Cook · Will Counties — Fully Insured · Licensed
+          </span>
+          <a href={PHONE_HREF} style={{ color: '#fff', fontSize: '13px', fontWeight: 700, letterSpacing: '.04em', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <PhoneIcon /> {PHONE}
           </a>
         </div>
       </div>
 
-      {/* Main nav */}
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      {/* ── MAIN HEADER ── */}
+      <header style={{
+        background: 'var(--white)',
+        borderBottom: '1px solid var(--line)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 200,
+        boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+      }}>
+        <div className="container" style={{ height: 68, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 32 }}>
+
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-orange-600 rounded-lg flex items-center justify-center text-xl font-black group-hover:bg-orange-500 transition-colors">
-              🌳
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, flexShrink: 0 }}>
+            <div style={{
+              width: 40, height: 40,
+              background: 'var(--green)',
+              borderRadius: 4,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              <TreeIcon />
             </div>
             <div>
-              <div className="font-display text-xl font-bold leading-tight tracking-wide">
-                CHICAGO <span className="text-orange-400">STUMP</span>
-              </div>
-              <div className="text-[10px] text-navy-300 uppercase tracking-widest leading-none -mt-0.5">
-                Grinding & Tree Specialists
-              </div>
+              <span style={{ fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--green-dark)', letterSpacing: '-.01em', display: 'block', lineHeight: 1.2 }}>
+                {SITE_NAME}
+              </span>
+              <span style={{ fontSize: '10.5px', color: 'var(--text-soft)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginTop: 2 }}>
+                Chicago Tree &amp; Stump Specialists
+              </span>
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {/* Services dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors rounded">
-                Services
-                <svg className="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {servicesOpen && (
-                <div className="absolute top-full left-0 bg-white text-gray-800 rounded-lg shadow-xl py-2 min-w-[200px] border border-gray-100">
-                  {NAV_SERVICES.map((s) => (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      className="block px-4 py-2 text-sm hover:bg-navy-50 hover:text-navy-900 font-medium"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {NAV_LINKS.map((l) => (
+          {/* Desktop Nav */}
+          <nav style={{ display: 'flex', gap: 2 }} className="desktop-nav">
+            {NAV_LINKS.map((link) => (
               <Link
-                key={l.href}
-                href={l.href}
-                className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors rounded"
+                key={link.href}
+                href={link.href}
+                style={{
+                  padding: '6px 13px',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  color: 'var(--text-mid)',
+                  borderRadius: 3,
+                  transition: 'background .14s, color .14s',
+                  letterSpacing: '.01em',
+                }}
+                className="nav-link"
               >
-                {l.label}
+                {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* CTA buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href={PHONE_HREF}
-              className="flex items-center gap-1.5 text-sm font-semibold text-white hover:text-orange-400 transition-colors"
-            >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              {PHONE}
+          {/* CTA Buttons */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+            <a href={PHONE_HREF} className="btn btn-outline" style={{ fontSize: '13.5px' }}>
+              <PhoneIcon size={13} /> Call Now
             </a>
-            <Link href="/request-quote" className="btn-primary text-sm py-2 px-4">
-              Free Quote
+            <Link href="/request-quote" className="btn btn-solid" style={{ fontSize: '13.5px' }}>
+              Free Estimate
             </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 rounded text-gray-300 hover:text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="mobile-menu-btn"
+            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 8 }}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <HamburgerIcon />
           </button>
         </div>
-      </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-navy-800 border-t border-navy-700">
-          <div className="px-4 py-4 space-y-1">
-            <p className="text-xs font-semibold text-navy-400 uppercase tracking-wider mb-2">Services</p>
-            {NAV_SERVICES.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-navy-700 rounded"
-                onClick={() => setMobileOpen(false)}
-              >
-                {s.label}
-              </Link>
-            ))}
-            <div className="border-t border-navy-700 pt-2 mt-2">
-              {NAV_LINKS.map((l) => (
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div style={{ background: 'var(--white)', borderTop: '1px solid var(--line)', padding: '16px 0 20px' }}>
+            <div className="container">
+              {NAV_LINKS.map((link) => (
                 <Link
-                  key={l.href}
-                  href={l.href}
-                  className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-navy-700 rounded"
-                  onClick={() => setMobileOpen(false)}
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  style={{ display: 'block', padding: '10px 0', fontSize: 15, fontWeight: 600, color: 'var(--text-mid)', borderBottom: '1px solid var(--line)' }}
                 >
-                  {l.label}
+                  {link.label}
                 </Link>
               ))}
-            </div>
-            <div className="border-t border-navy-700 pt-3 mt-2 flex flex-col gap-2">
-              <a href={PHONE_HREF} className="btn-primary justify-center text-sm">
-                📞 Call {PHONE}
-              </a>
-              <Link href="/request-quote" onClick={() => setMobileOpen(false)} className="btn-outline-white justify-center text-sm">
-                Get Free Quote
-              </Link>
+              <div style={{ marginTop: 16, display: 'flex', gap: 10 }}>
+                <a href={PHONE_HREF} className="btn btn-outline" style={{ flex: 1, justifyContent: 'center' }}>{PHONE}</a>
+                <Link href="/request-quote" className="btn btn-solid" style={{ flex: 1, justifyContent: 'center' }}>Free Estimate</Link>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+
+      <style>{`
+        .nav-link:hover { background: var(--green-light) !important; color: var(--green) !important; }
+        @media (max-width: 900px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: block !important; }
+        }
+      `}</style>
+    </>
+  );
+}
+
+function PhoneIcon({ size = 13 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.128.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L9.17 9.91a16 16 0 006.92 6.92l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+  );
+}
+
+function TreeIcon() {
+  return (
+    <svg width="24" height="24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" viewBox="0 0 24 24">
+      <path d="M12 22V12M12 12C12 7 7 4 3 6c4 0 7 3 9 6M12 12c0-5 5-8 9-6-4 0-7 3-9 6"/>
+      <path d="M8 17c1.5-1 3-1.5 4-1.5s2.5.5 4 1.5"/>
+    </svg>
+  );
+}
+
+function HamburgerIcon() {
+  return (
+    <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path d="M3 12h18M3 6h18M3 18h18"/>
+    </svg>
   );
 }
