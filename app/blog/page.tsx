@@ -37,7 +37,7 @@ export default function BlogPage() {
 
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {BLOG_POSTS.map((post, i) => (
               <Link
                 key={post.slug}

@@ -4,7 +4,7 @@ import { SITE_NAME, PHONE, PHONE_HREF, EMAIL } from '@/lib/constants';
 export default function Footer() {
   return (
     <footer style={{ background: '#07150a' }}>
-      <div className="container" style={{
+      <div className="container footer-grid" style={{
         display: 'grid',
         gridTemplateColumns: '2.2fr 1fr 1fr 1fr',
         gap: 44,

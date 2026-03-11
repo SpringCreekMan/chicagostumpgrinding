@@ -55,7 +55,7 @@ export default function TreeServicePage() {
 
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
+          <div className="page-layout-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
             <div>
               <div style={{ marginBottom: 48 }}>
                 <div className="eyebrow">What We Offer</div>
@@ -63,7 +63,7 @@ export default function TreeServicePage() {
                 <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300, marginBottom: 24 }}>
                   Chicago Tree &amp; Stump Specialists provides full-service tree care for residential and commercial properties across Chicago&apos;s western and southwestern suburbs. Our certified professionals handle everything from routine annual trimming to major hazard removals.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
                   {[
                     { icon: "✂️", title: "Tree Trimming & Pruning", desc: "Remove dead, diseased, or crossing branches. Improve structure and appearance." },
                     { icon: "👑", title: "Crown Thinning & Reduction", desc: "Reduce wind load, improve light penetration, and maintain tree health." },

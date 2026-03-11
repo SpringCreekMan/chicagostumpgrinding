@@ -81,7 +81,7 @@ export default function StumpGrindingPage() {
       {/* Main content */}
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
+          <div className="page-layout-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
             {/* Main */}
             <div>
               <div style={{ marginBottom: 48 }}>
@@ -119,7 +119,7 @@ export default function StumpGrindingPage() {
               <div style={{ marginBottom: 48 }}>
                 <div className="eyebrow">Common Situations</div>
                 <h2 className="section-h2">When Do You Need Stump Grinding?</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginTop: 20 }}>
+                <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginTop: 20 }}>
                   {[
                     { title: "After Tree Removal", desc: "A tree was taken down and the stump needs to go." },
                     { title: "Safety Hazard", desc: "The stump is a tripping risk for family or guests." },

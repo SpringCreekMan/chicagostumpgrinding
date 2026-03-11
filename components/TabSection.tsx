@@ -57,7 +57,7 @@ export default function TabSection({ eyebrow, heading, subheading, tabs }: Props
           </div>
 
           {/* Tab Panel */}
-          <div style={{
+          <div className="grid-3" style={{
             paddingTop: 28,
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',

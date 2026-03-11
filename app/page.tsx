@@ -85,7 +85,7 @@ export default function HomePage() {
               From a single stump to complete tree removal — we handle it all with professional equipment and a commitment to clean, careful work.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--line)', border: '1px solid var(--line)', borderRadius: 5, overflow: 'hidden', marginTop: 44 }}>
+          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--line)', border: '1px solid var(--line)', borderRadius: 5, overflow: 'hidden', marginTop: 44 }}>
             {SERVICES.map((s) => (
               <Link key={s.slug} href={`/${s.slug}`} style={{ background: 'var(--white)', padding: '32px 26px 28px', display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit', transition: 'background .16s' }} className="service-tile">
                 <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--green-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18, fontSize: 20 }}>
@@ -112,7 +112,7 @@ export default function HomePage() {
           <p className="section-sub">
             We&apos;re a local, owner-operated business — not a franchise. That means faster service, better communication, and work you can count on.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 48 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 48 }}>
             {WHY_CHOOSE_US.map((item, i) => (
               <div key={item.title} style={{ padding: '32px 28px', background: 'var(--white)', border: '1px solid var(--line)', borderRadius: 4 }}>
                 <div style={{ width: 36, height: 36, background: 'var(--green-dark)', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>
@@ -134,8 +134,8 @@ export default function HomePage() {
             <h2 className="section-h2" style={{ marginLeft: 'auto', marginRight: 'auto' }}>How It Works</h2>
             <p className="section-sub" style={{ margin: '0 auto' }}>Simple, straightforward, and stress-free from start to finish.</p>
           </div>
-          <div style={{ display: 'flex', gap: 0, position: 'relative', marginTop: 48 }}>
-            <div style={{ position: 'absolute', top: 28, left: 'calc(12.5%)', right: 'calc(12.5%)', height: 1, background: 'var(--line)' }} />
+          <div className="flex-steps" style={{ display: 'flex', gap: 0, position: 'relative', marginTop: 48 }}>
+            <div className="process-line" style={{ position: 'absolute', top: 28, left: 'calc(12.5%)', right: 'calc(12.5%)', height: 1, background: 'var(--line)' }} />
             {PROCESS_STEPS.map((step) => (
               <div key={step.step} style={{ flex: 1, textAlign: 'center', padding: '0 12px' }}>
                 <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--green)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, margin: '0 auto 20px', position: 'relative', zIndex: 1, border: '3px solid var(--bg-soft)' }}>
@@ -157,7 +157,7 @@ export default function HomePage() {
           <p className="section-sub">
             We serve Chicago and the surrounding suburbs in DuPage, Cook, and Will Counties.
           </p>
-          <div style={{ columns: 4, columnGap: 24, marginTop: 36 }}>
+          <div className="cols-4" style={{ columns: 4, columnGap: 24, marginTop: 36 }}>
             {FEATURED_AREAS.map((a) => (
               <Link
                 key={a.href}

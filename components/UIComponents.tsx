@@ -71,7 +71,7 @@ export function ServiceAreaGrid({ areas, title }: { areas: AreaLink[]; title?: s
   return (
     <div>
       {title && <h2 className="section-h2" style={{ marginBottom: 24 }}>{title}</h2>}
-      <div style={{ columns: 4, columnGap: 24, marginTop: title ? 0 : 36 }}>
+      <div className="cols-4" style={{ columns: 4, columnGap: 24, marginTop: title ? 0 : 36 }}>
         {areas.map((a) => (
           <Link
             key={a.href}

@@ -20,8 +20,8 @@ export default function Header() {
     <>
       {/* ── UTILITY BAR ── */}
       <div style={{ background: 'var(--green-deep)', padding: '9px 0' }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ fontSize: '12.5px', color: 'rgba(255,255,255,.55)', letterSpacing: '.02em' }}>
+        <div className="container util-bar-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span className="util-bar-text" style={{ fontSize: '12.5px', color: 'rgba(255,255,255,.55)', letterSpacing: '.02em' }}>
             Serving DuPage · Cook · Will Counties — Fully Insured · Licensed
           </span>
           <a href={PHONE_HREF} style={{ color: '#fff', fontSize: '13px', fontWeight: 700, letterSpacing: '.04em', display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -42,20 +42,21 @@ export default function Header() {
         <div className="container" style={{ height: 68, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 32 }}>
 
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, flexShrink: 0 }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, minWidth: 0 }}>
             <div style={{
               width: 40, height: 40,
               background: 'var(--green)',
               borderRadius: 4,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
+              flexShrink: 0,
             }}>
               <TreeIcon />
             </div>
-            <div>
-              <span style={{ fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--green-dark)', letterSpacing: '-.01em', display: 'block', lineHeight: 1.2 }}>
+            <div style={{ minWidth: 0 }}>
+              <span style={{ fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--green-dark)', letterSpacing: '-.01em', display: 'block', lineHeight: 1.2, whiteSpace: 'nowrap' }}>
                 {SITE_NAME}
               </span>
-              <span style={{ fontSize: '10.5px', color: 'var(--text-soft)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginTop: 2 }}>
+              <span className="header-logo-text" style={{ fontSize: '10.5px', color: 'var(--text-soft)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginTop: 2 }}>
                 Chicago Tree &amp; Stump Specialists
               </span>
             </div>
@@ -84,7 +85,7 @@ export default function Header() {
           </nav>
 
           {/* CTA Buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+          <div className="header-cta-buttons" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
             <a href={PHONE_HREF} className="btn btn-outline" style={{ fontSize: '13.5px' }}>
               <PhoneIcon size={13} /> Call Now
             </a>

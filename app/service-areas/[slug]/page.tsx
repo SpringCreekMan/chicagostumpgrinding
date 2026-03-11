@@ -133,7 +133,7 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
         </div>
 
         {/* Floating specialist card */}
-        <div style={{ position: 'absolute', right: 30, bottom: 40, zIndex: 3, background: 'rgba(255,255,255,.96)', borderRadius: 4, padding: '20px 22px', boxShadow: '0 8px 32px rgba(0,0,0,.28)', width: 240, borderTop: '3px solid var(--green)' }}>
+        <div className="hero-card-float" style={{ position: 'absolute', right: 30, bottom: 40, zIndex: 3, background: 'rgba(255,255,255,.96)', borderRadius: 4, padding: '20px 22px', boxShadow: '0 8px 32px rgba(0,0,0,.28)', width: 240, borderTop: '3px solid var(--green)' }}>
           <div style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: '.1em', color: 'var(--text-soft)', fontWeight: 700, marginBottom: 8 }}>Your Local Specialist</div>
           <div style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 2 }}>{suburb.name} Service Area</div>
           <div style={{ fontSize: '12.5px', color: 'var(--text-soft)', marginBottom: 14 }}>Serving all of {suburb.name} &amp; {suburb.county} County</div>
@@ -163,7 +163,7 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
           <h2 className="section-h2">Tree &amp; Stump Services in {suburb.name}</h2>
           <p className="section-sub">From a single stump to full tree removal — professional equipment, experienced crew, complete cleanup.</p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--line)', borderRadius: 5, overflow: 'hidden', border: '1px solid var(--line)', marginTop: 44 }}>
+          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--line)', borderRadius: 5, overflow: 'hidden', border: '1px solid var(--line)', marginTop: 44 }}>
             {[
               { icon: '⚙️', title: 'Stump Grinding', desc: 'We grind stumps below grade with commercial equipment. The area is left flat, clean, and ready to reseed or landscape over.', href: '/stump-grinding' },
               { icon: '🌿', title: 'Stump Removal', desc: 'Full extraction of the stump and root ball — the right choice before hardscaping, construction, or replanting in the same spot.', href: '/stump-removal' },
@@ -187,7 +187,7 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
       {/* ── LOCAL EXPERTISE ───────────────────────────────── */}
       <section className="section section-alt">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+          <div className="two-col-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
             <div>
               <div className="eyebrow">{suburb.name}, IL</div>
               <h2 className="section-h2">Local Knowledge, Professional Results</h2>
@@ -249,7 +249,7 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
       <section className="section section-alt">
         <div className="container">
           {/* Page layout with sticky sidebar */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
+          <div className="page-layout-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
             <div>
               {/* Why Choose Us */}
               <div className="eyebrow">Why Choose Us</div>
@@ -258,7 +258,7 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
                 We&apos;re not a national franchise with a call center. We&apos;re a local Chicagoland team — and it shows in every job we do.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 52 }}>
+              <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 52 }}>
                 {[
                   { num: '1', title: 'Truly Local', desc: `We know ${suburb.name}'s neighborhoods and tree species. You deal directly with the crew doing the work — not a dispatcher.` },
                   { num: '2', title: 'Upfront Written Quotes', desc: "We assess your job on-site and give you a firm written price. You'll never see a surprise charge on your invoice." },
@@ -316,8 +316,8 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
               <div style={{ marginTop: 48 }}>
                 <div className="eyebrow">Our Process</div>
                 <h2 className="section-h2">Simple from Start to Finish</h2>
-                <div style={{ display: 'flex', gap: 0, position: 'relative', marginTop: 32 }}>
-                  <div style={{ position: 'absolute', top: 28, left: 'calc(12.5%)', right: 'calc(12.5%)', height: 1, background: 'var(--line)' }} />
+                <div className="flex-steps" style={{ display: 'flex', gap: 0, position: 'relative', marginTop: 32 }}>
+                  <div className="process-line" style={{ position: 'absolute', top: 28, left: 'calc(12.5%)', right: 'calc(12.5%)', height: 1, background: 'var(--line)' }} />
                   {[
                     { n: '1', title: 'Request a Quote', desc: 'Call or fill out the online form. We respond same day.' },
                     { n: '2', title: 'Free Estimate',   desc: 'We visit, assess, and give you a firm written price.' },
@@ -354,7 +354,7 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
             In addition to {suburb.name}, our stump grinding and tree service team covers the following suburbs across DuPage, Cook, and Will Counties.
           </p>
 
-          <div style={{ columns: 4, columnGap: 24 }}>
+          <div className="cols-4" style={{ columns: 4, columnGap: 24 }}>
             {nearby.map((area) => (
               <Link
                 key={area.slug}

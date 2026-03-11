@@ -65,7 +65,7 @@ export default function PricingPage() {
 
           <div style={{ marginTop: 36, background: 'var(--green-pale)', borderRadius: 4, padding: 28, border: '1px solid var(--line)' }}>
             <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 16 }}>What Affects Your Price?</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               {[
                 { factor: "Stump Diameter", note: "Primary pricing factor — measured at ground level" },
                 { factor: "Root Complexity", note: "Extensive surface roots add time and cost" },

@@ -26,7 +26,7 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container" style={{ maxWidth: 1000 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 52, alignItems: 'start' }}>
+          <div className="two-col-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 52, alignItems: 'start' }}>
             <div>
               <div style={{ marginBottom: 40 }}>
                 <div className="eyebrow">Our Story</div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
             <div>
               <div style={{ background: 'var(--green-pale)', borderRadius: 4, padding: 32, border: '1px solid var(--line)', marginBottom: 24 }}>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 20, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 24 }}>By the Numbers</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+                <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
                   {[
                     { n: "500+", label: "Stumps Removed" },
                     { n: "5★", label: "Google Rating" },

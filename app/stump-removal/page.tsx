@@ -54,7 +54,7 @@ export default function StumpRemovalPage() {
 
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
+          <div className="page-layout-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
             <div>
               <div style={{ marginBottom: 48 }}>
                 <div className="eyebrow">About the Service</div>

@@ -27,7 +27,7 @@ export default function ContactPage() {
 
       <section className="section">
         <div className="container" style={{ maxWidth: 900 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 52 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 52 }}>
             <div style={{ background: 'var(--green-pale)', borderRadius: 4, padding: 28, border: '1px solid var(--line)', textAlign: 'center' }}>
               <div style={{ fontSize: 36, marginBottom: 12 }}>📞</div>
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 10 }}>Call or Text</h3>

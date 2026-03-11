@@ -66,13 +66,14 @@ export default function QuoteForm({ compact = false }: QuoteFormProps) {
     );
   }
 
+  const gridClass = compact ? '' : 'grid-2col';
   const gridStyle = compact
     ? { display: 'grid', gridTemplateColumns: '1fr', gap: 16 }
     : { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div style={gridStyle}>
+      <div className={gridClass} style={gridStyle}>
         <div>
           <label htmlFor="name" className="form-label">Your Name <span style={{ color: '#c53030' }}>*</span></label>
           <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="John Smith" className="form-input" />
@@ -96,7 +97,7 @@ export default function QuoteForm({ compact = false }: QuoteFormProps) {
         <input id="address" name="address" type="text" value={form.address} onChange={handleChange} placeholder="123 Oak St, Chicago, IL 60601" className="form-input" />
       </div>
 
-      <div style={{ ...gridStyle, marginTop: 16 }}>
+      <div className={gridClass} style={{ ...gridStyle, marginTop: 16 }}>
         <div>
           <label htmlFor="service" className="form-label">Service Needed <span style={{ color: '#c53030' }}>*</span></label>
           <select id="service" name="service" required value={form.service} onChange={handleChange} className="form-input">

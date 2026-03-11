@@ -24,7 +24,7 @@ export default function Testimonials({ suburb = 'Chicagoland', testimonials }: P
           Trusted by hundreds of homeowners across DuPage, Cook, and Will Counties.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           {testimonials.map((t, i) => (
             <div
               key={i}

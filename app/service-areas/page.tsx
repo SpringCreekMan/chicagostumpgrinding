@@ -32,7 +32,7 @@ export default function ServiceAreasPage() {
             <div className="eyebrow">Stump Grinding</div>
             <h2 className="section-h2">Stump Grinding Service Areas</h2>
             <p className="section-sub" style={{ marginBottom: 28 }}>Professional stump grinding and stump removal across Chicago&apos;s suburbs.</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+            <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {stumpGrindingAreas.map((suburb) => (
                 <Link
                   key={suburb.slug}
@@ -60,7 +60,7 @@ export default function ServiceAreasPage() {
             <div className="eyebrow">Tree Care</div>
             <h2 className="section-h2">Tree Service Areas</h2>
             <p className="section-sub" style={{ marginBottom: 28 }}>Expert tree trimming, pruning, and removal across Chicago&apos;s suburbs.</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+            <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {treeServiceAreas.map((suburb) => (
                 <Link
                   key={suburb.slug}
