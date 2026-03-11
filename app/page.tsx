@@ -180,6 +180,18 @@ export default function HomePage() {
       {/* TESTIMONIALS */}
       <Testimonials testimonials={TESTIMONIALS} />
 
+      {/* TEAM TRUST */}
+      <section style={{ padding: '56px 0', background: 'var(--bg-soft)' }}>
+        <div className="container" style={{ maxWidth: 800, textAlign: 'center' }}>
+          <div style={{ borderRadius: 4, overflow: 'hidden', marginBottom: 20 }}>
+            <img src="/images/crew-team.jpg" alt="Chicago Stump Grinding crew in matching green polos standing in front of their service truck" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+          <p style={{ fontSize: 14, color: 'var(--text-soft)', fontWeight: 300, lineHeight: 1.7 }}>
+            Our crew arrives on time, in uniform, with professional equipment — ready to get the job done right.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="section section-alt">
         <div className="container" style={{ maxWidth: 760 }}>

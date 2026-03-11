@@ -15,6 +15,7 @@ export interface SuburbData {
   metaTitle: string;
   metaDescription: string;
   heroSubtitle?: string;
+  heroImage?: string;
   localExpertiseParagraph?: string;
   faqs?: Array<{ question: string; answer: string }>;
 }
@@ -44,6 +45,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Naperville Stump Grinding | Tree Stump Removal in Naperville IL",
     metaDescription:
       "Professional stump grinding in Naperville, IL. Fast tree stump removal for homeowners in Naperville and nearby DuPage County. Request a free quote today.",
+    heroImage: "/images/suburb-street-western.jpg",
   },
   {
     slug: "hinsdale-stump-grinding",
@@ -68,6 +70,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Hinsdale Stump Grinding | Tree Stump Removal in Hinsdale IL",
     metaDescription:
       "Expert stump grinding in Hinsdale, IL. We grind stumps of all sizes on Hinsdale's large residential lots. Free quote — same-week service available.",
+    heroImage: "/images/suburb-estate-hinsdale.jpg",
   },
   {
     slug: "downers-grove-stump-grinding",
@@ -92,6 +95,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Downers Grove Stump Grinding | Tree Stump Removal in Downers Grove IL",
     metaDescription:
       "Professional stump grinding in Downers Grove, IL. Local stump removal service for DuPage County homeowners. Fast response, fair pricing. Free quote.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "glen-ellyn-stump-grinding",
@@ -116,6 +120,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Glen Ellyn Stump Grinding | Tree Stump Removal in Glen Ellyn IL",
     metaDescription:
       "Stump grinding in Glen Ellyn, IL. Professional tree stump removal for homeowners in Glen Ellyn and DuPage County. Same-week service. Free quote today.",
+    heroImage: "/images/suburb-street-western.jpg",
   },
   {
     slug: "oak-brook-stump-grinding",
@@ -140,6 +145,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Oak Brook Stump Grinding | Tree Stump Removal in Oak Brook IL",
     metaDescription:
       "Expert stump grinding in Oak Brook, IL. Residential and commercial stump removal in Oak Brook and DuPage County. Free estimates, fast service.",
+    heroImage: "/images/suburb-estate-hinsdale.jpg",
   },
   {
     slug: "western-springs-stump-grinding",
@@ -164,6 +170,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Western Springs Stump Grinding | Tree Stump Removal in Western Springs IL",
     metaDescription:
       "Stump grinding in Western Springs, IL. Professional stump removal for Cook County homeowners. Fast, clean, and affordable. Request your free quote.",
+    heroImage: "/images/suburb-estate-hinsdale.jpg",
   },
   {
     slug: "la-grange-stump-grinding",
@@ -188,6 +195,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "La Grange Stump Grinding | Tree Stump Removal in La Grange IL",
     metaDescription:
       "Professional stump grinding in La Grange, IL. Local stump removal service serving La Grange and Cook County. Same-week appointments. Free quotes.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "burr-ridge-stump-grinding",
@@ -212,6 +220,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Burr Ridge Stump Grinding | Tree Stump Removal in Burr Ridge IL",
     metaDescription:
       "Expert stump grinding in Burr Ridge, IL. Professional stump removal for Burr Ridge residential properties. Free on-site estimates. Book today.",
+    heroImage: "/images/suburb-estate-hinsdale.jpg",
   },
   {
     slug: "elmhurst-stump-grinding",
@@ -236,6 +245,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Elmhurst Stump Grinding | Tree Stump Removal in Elmhurst IL",
     metaDescription:
       "Stump grinding in Elmhurst, IL. Fast, professional tree stump removal for DuPage County homeowners. Request your free estimate today.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "wheaton-stump-grinding",
@@ -260,6 +270,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Wheaton Stump Grinding | Tree Stump Removal in Wheaton IL",
     metaDescription:
       "Professional stump grinding in Wheaton, IL. Local stump removal for DuPage County homeowners. Fast quotes, same-week service. Call today.",
+    heroImage: "/images/suburb-street-western.jpg",
   },
   {
     slug: "darien-stump-grinding",
@@ -284,6 +295,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Darien Stump Grinding | Tree Stump Removal in Darien IL",
     metaDescription:
       "Stump grinding in Darien, IL. Professional tree stump removal for Darien and DuPage County. Fast response, clean results. Request a free quote.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "lemont-stump-grinding",
@@ -308,6 +320,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Lemont Stump Grinding | Tree Stump Removal in Lemont IL",
     metaDescription:
       "Professional stump grinding in Lemont, IL. Expert stump removal for Cook, DuPage, and Will County homeowners. Free on-site quotes. Book today.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "homer-glen-stump-grinding",
@@ -332,6 +345,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Homer Glen Stump Grinding | Tree Stump Removal in Homer Glen IL",
     metaDescription:
       "Stump grinding in Homer Glen, IL. Professional stump removal for Will County homeowners. Serving Homer Glen and nearby suburbs. Request a free quote.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
 
   // ─── TREE SERVICE PAGES ──────────────────────────────────────────────────
@@ -358,6 +372,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Hinsdale Tree Service | Tree Trimming & Removal in Hinsdale IL",
     metaDescription:
       "Expert tree service in Hinsdale, IL. Professional tree trimming, removal, and storm cleanup for Hinsdale homeowners. Free estimates. Call today.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "glen-ellyn-tree-service",
@@ -382,6 +397,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Glen Ellyn Tree Service | Tree Trimming & Removal in Glen Ellyn IL",
     metaDescription:
       "Professional tree service in Glen Ellyn, IL. Expert tree trimming, pruning, and removal for DuPage County homeowners. Free quotes. Book today.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "oak-brook-tree-service",
@@ -406,6 +422,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Oak Brook Tree Service | Tree Trimming & Removal in Oak Brook IL",
     metaDescription:
       "Expert tree service in Oak Brook, IL. Residential and commercial tree trimming, pruning, and removal. Serving DuPage County. Free estimates.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "western-springs-tree-service",
@@ -430,6 +447,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Western Springs Tree Service | Tree Trimming & Removal in Western Springs IL",
     metaDescription:
       "Professional tree service in Western Springs, IL. Expert tree trimming and removal for Cook County homeowners. Same-week service. Free quote.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "burr-ridge-tree-service",
@@ -454,6 +472,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Burr Ridge Tree Service | Tree Trimming & Removal in Burr Ridge IL",
     metaDescription:
       "Expert tree service in Burr Ridge, IL. Professional tree trimming, pruning, and removal for Burr Ridge residential properties. Free estimates.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "elmhurst-tree-service",
@@ -478,6 +497,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Elmhurst Tree Service | Tree Trimming & Removal in Elmhurst IL",
     metaDescription:
       "Professional tree service in Elmhurst, IL. Expert tree trimming, pruning, and removal for DuPage County homeowners. Request your free estimate today.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "wheaton-tree-service",
@@ -502,6 +522,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Wheaton Tree Service | Tree Trimming & Removal in Wheaton IL",
     metaDescription:
       "Expert tree service in Wheaton, IL. Professional tree trimming, removal, and storm cleanup for DuPage County homeowners. Free quotes. Call today.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "lemont-tree-service",
@@ -526,6 +547,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Lemont Tree Service | Tree Trimming & Removal in Lemont IL",
     metaDescription:
       "Professional tree service in Lemont, IL. Expert tree trimming, pruning, and removal for Cook, DuPage, and Will County homeowners. Free estimates.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
   {
     slug: "homer-glen-tree-service",
@@ -550,6 +572,7 @@ export const SUBURBS: SuburbData[] = [
     metaTitle: "Homer Glen Tree Service | Tree Trimming & Removal in Homer Glen IL",
     metaDescription:
       "Expert tree service in Homer Glen, IL. Professional tree trimming, removal, and stump grinding for Will County homeowners. Free quotes. Call today.",
+    heroImage: "/images/suburban-backyard.jpg",
   },
 ];
 

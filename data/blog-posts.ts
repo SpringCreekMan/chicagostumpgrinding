@@ -21,6 +21,8 @@ export const BLOG_POSTS: BlogPost[] = [
     publishDate: "2024-06-01",
     readTime: "6 min read",
     content: `
+<img src="/images/estimate-review.jpg" alt="Homeowner and tree service professional reviewing a stump grinding estimate on a clipboard in a suburban backyard" style="width:100%;height:auto;border-radius:4px;margin-bottom:24px" />
+
 <h2>Average Stump Grinding Costs in Chicago</h2>
 <p>For most homeowners in Chicago and the suburbs, stump grinding costs between <strong>$150 and $400 per stump</strong>. The average single-stump job in DuPage and Cook County runs around $225–$275. Large stumps, multiple stumps, or difficult access can push prices higher.</p>
 
@@ -62,6 +64,8 @@ export const BLOG_POSTS: BlogPost[] = [
     publishDate: "2024-05-15",
     readTime: "5 min read",
     content: `
+<img src="/images/grinding-vs-removal.jpg" alt="Side-by-side comparison: stump grinding (left) vs stump removal (right)" style="width:100%;height:auto;border-radius:4px;margin-bottom:24px" />
+
 <h2>The Core Difference</h2>
 <p><strong>Stump grinding</strong> uses a machine with a rotating cutting wheel to chip the stump down 8–12 inches below grade. The roots remain in the ground and decompose naturally. The result is a pile of wood chips and a flat surface ready for grass seeding or light landscaping.</p>
 
@@ -103,6 +107,8 @@ export const BLOG_POSTS: BlogPost[] = [
     publishDate: "2024-04-20",
     readTime: "4 min read",
     content: `
+<img src="/images/grass-after-grinding.jpg" alt="Fresh grass seedlings sprouting through topsoil and wood chip grindings where a tree stump was ground down" style="width:100%;height:auto;border-radius:4px;margin-bottom:24px" />
+
 <h2>Yes — Grass Grows Well After Stump Grinding</h2>
 <p>One of the most common questions after a stump grinding job is: <em>can I seed grass over this area?</em> The answer is yes — but there's a right way to do it for the best results.</p>
 
@@ -143,6 +149,8 @@ export const BLOG_POSTS: BlogPost[] = [
     publishDate: "2024-03-10",
     readTime: "3 min read",
     content: `
+<img src="/images/grinding-crew-action.jpg" alt="Professional stump grinding crew operating a tracked commercial grinder in a suburban Chicago backyard" style="width:100%;height:auto;border-radius:4px;margin-bottom:24px" />
+
 <h2>Typical Stump Grinding Timelines</h2>
 <p>For most residential stump grinding jobs in the Chicago area:</p>
 <ul>
@@ -189,6 +197,8 @@ export const BLOG_POSTS: BlogPost[] = [
     publishDate: "2024-02-01",
     readTime: "5 min read",
     content: `
+<img src="/images/neglected-stump-decay.jpg" alt="Old weathered tree stump with fungal growth and weeds in a suburban backyard — signs it's time for removal" style="width:100%;height:auto;border-radius:4px;margin-bottom:24px" />
+
 <h2>Do You Have to Remove a Tree Stump?</h2>
 <p>Technically, no — leaving a stump in your yard isn't illegal (unless your HOA or municipality says otherwise). But there are several good reasons why most homeowners eventually choose removal.</p>
 

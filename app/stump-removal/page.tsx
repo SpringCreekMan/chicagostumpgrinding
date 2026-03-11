@@ -66,11 +66,17 @@ export default function StumpRemovalPage() {
                 <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300 }}>
                   It&apos;s more labor-intensive and costs more than grinding, but it&apos;s the right choice for specific situations where a completely clean excavation is needed.
                 </p>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 24 }}>
+                  <img src="/images/stump-before.jpg" alt="Weathered tree stump in a Chicago suburb backyard awaiting removal" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
               </div>
 
               <div style={{ marginBottom: 48 }}>
                 <div className="eyebrow">When to Choose Removal</div>
                 <h2 className="section-h2">When to Choose Stump Removal Over Grinding</h2>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 16, marginBottom: 20 }}>
+                  <img src="/images/grinding-vs-removal.jpg" alt="Side-by-side comparison: stump grinding (left) vs full stump removal (right)" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 16 }}>
                   {[
                     { title: "New Construction", desc: "Building a foundation, driveway, or patio where roots would interfere." },
@@ -100,6 +106,10 @@ export default function StumpRemovalPage() {
                   <Link href="/blog/stump-grinding-vs-stump-removal" style={{ color: 'var(--green)', fontWeight: 600 }}>Read our comparison guide</Link>{" "}
                   or <Link href="/contact" style={{ color: 'var(--green)', fontWeight: 600 }}>ask us directly</Link>.
                 </p>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 24 }}>
+                  <img src="/images/stump-removal-after.jpg" alt="Clean yard after complete stump removal — wood chips and mulch where stump was" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                  <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, fontStyle: 'italic' }}>After: stump fully removed, area ready for backfill and new landscaping.</p>
+                </div>
               </div>
 
               <div className="eyebrow">Common Questions</div>

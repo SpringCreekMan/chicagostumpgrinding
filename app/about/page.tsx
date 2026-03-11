@@ -62,6 +62,9 @@ export default function AboutPage() {
             </div>
 
             <div>
+              <div style={{ borderRadius: 4, overflow: 'hidden', marginBottom: 24 }}>
+                <img src="/images/owner-portrait.jpg" alt="Owner and lead arborist of Chicago Stump Grinding" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
               <div style={{ background: 'var(--green-pale)', borderRadius: 4, padding: 32, border: '1px solid var(--line)', marginBottom: 24 }}>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 20, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 24 }}>By the Numbers</h3>
                 <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>

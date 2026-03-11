@@ -123,6 +123,9 @@ export default function StumpGrindingPage() {
               <div style={{ marginBottom: 48 }}>
                 <div className="eyebrow">Common Situations</div>
                 <h2 className="section-h2">When Do You Need Stump Grinding?</h2>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 16, marginBottom: 20 }}>
+                  <img src="/images/stump-before.jpg" alt="Tree stump in backyard lawn — common reason homeowners call for stump grinding" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
                 <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginTop: 20 }}>
                   {[
                     { title: "After Tree Removal", desc: "A tree was taken down and the stump needs to go." },

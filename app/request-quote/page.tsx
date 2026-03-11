@@ -37,6 +37,9 @@ export default function RequestQuotePage() {
 
             {/* Info sidebar */}
             <aside>
+              <div style={{ borderRadius: 4, overflow: 'hidden', marginBottom: 20 }}>
+                <img src="/images/estimate-review.jpg" alt="Crew member reviewing a free estimate with homeowner next to a tree stump" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
               <div style={{ background: 'var(--green-pale)', borderRadius: 4, padding: 28, border: '1px solid var(--line)', marginBottom: 20 }}>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 18 }}>What Happens Next?</h3>
                 <ol style={{ listStyle: 'none', padding: 0, margin: 0 }}>
