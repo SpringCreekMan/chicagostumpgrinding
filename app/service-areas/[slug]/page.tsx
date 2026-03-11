@@ -68,6 +68,21 @@ export default function SuburbPage({ params }: { params: { slug: string } }) {
       <section style={{ position: 'relative', minHeight: 520, display: 'flex', alignItems: 'stretch', background: 'var(--green-deep)', overflow: 'hidden' }}>
         {/* Background layers */}
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 900px 600px at 75% 30%, rgba(45,122,65,.35) 0%, transparent 60%), linear-gradient(175deg, #071a0d 0%, #0d2714 35%, #143f20 65%, #1a5028 100%)' }} />
+
+        {/* Tree silhouette SVG layer */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: '100%',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 520' preserveAspectRatio='xMidYMax slice'%3E%3Cellipse cx='900' cy='260' rx='120' ry='160' fill='%230f3318' opacity='.7'/%3E%3Cellipse cx='1050' cy='240' rx='100' ry='180' fill='%230d2c14' opacity='.8'/%3E%3Cellipse cx='780' cy='280' rx='90' ry='130' fill='%23102e1a' opacity='.6'/%3E%3Cellipse cx='950' cy='290' rx='140' ry='200' fill='%231a4a28' opacity='.85'/%3E%3Cellipse cx='1100' cy='270' rx='110' ry='220' fill='%23143820' opacity='.9'/%3E%3Cellipse cx='820' cy='310' rx='100' ry='160' fill='%231d5030' opacity='.75'/%3E%3Cellipse cx='1000' cy='360' rx='180' ry='260' fill='%23214a2c' opacity='.95'/%3E%3Cellipse cx='1150' cy='340' rx='150' ry='280' fill='%231a3d22' opacity='.95'/%3E%3Crect x='990' y='400' width='20' height='120' fill='%230d1f12' rx='3'/%3E%3Crect x='1140' y='420' width='18' height='100' fill='%230d1f12' rx='3'/%3E%3Crect x='810' y='390' width='14' height='130' fill='%230d1f12' rx='3'/%3E%3C/svg%3E")`,
+          backgroundSize: 'cover', backgroundPosition: 'bottom right', pointerEvents: 'none',
+        }} />
+
+        {/* Sunlight shaft */}
+        <div style={{
+          position: 'absolute', top: -60, left: '38%', width: 340, height: '120%',
+          background: 'linear-gradient(170deg, rgba(255,220,100,.04) 0%, rgba(255,220,100,.0) 100%)',
+          transform: 'rotate(-8deg)', pointerEvents: 'none',
+        }} />
+
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(7,26,13,.88) 0%, rgba(7,26,13,.70) 42%, rgba(7,26,13,.15) 100%)' }} />
 
         {/* Content */}

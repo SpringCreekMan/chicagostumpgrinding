@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import { CTABanner, ServiceCard, Testimonials, ServiceAreaGrid } from "@/components/UIComponents";
+import { CTABanner } from "@/components/UIComponents";
+import Testimonials from "@/components/Testimonials";
 import FAQAccordion from "@/components/FAQAccordion";
 import {
   SERVICES,
@@ -21,21 +22,20 @@ export const metadata: Metadata = {
 };
 
 const FEATURED_AREAS = [
-  { href: "/service-areas/naperville-stump-grinding", label: "Naperville", sub: "Stump Grinding" },
-  { href: "/service-areas/hinsdale-stump-grinding", label: "Hinsdale", sub: "Stump Grinding" },
-  { href: "/service-areas/wheaton-stump-grinding", label: "Wheaton", sub: "Stump Grinding" },
-  { href: "/service-areas/downers-grove-stump-grinding", label: "Downers Grove", sub: "Stump Grinding" },
-  { href: "/service-areas/glen-ellyn-stump-grinding", label: "Glen Ellyn", sub: "Stump Grinding" },
-  { href: "/service-areas/oak-brook-stump-grinding", label: "Oak Brook", sub: "Stump Grinding" },
-  { href: "/service-areas/elmhurst-stump-grinding", label: "Elmhurst", sub: "Stump Grinding" },
-  { href: "/service-areas/la-grange-stump-grinding", label: "La Grange", sub: "Stump Grinding" },
-  { href: "/service-areas/lemont-stump-grinding", label: "Lemont", sub: "Stump Grinding" },
-  { href: "/service-areas/homer-glen-stump-grinding", label: "Homer Glen", sub: "Stump Grinding" },
-  { href: "/service-areas/burr-ridge-stump-grinding", label: "Burr Ridge", sub: "Stump Grinding" },
-  { href: "/service-areas/darien-stump-grinding", label: "Darien", sub: "Stump Grinding" },
+  { href: "/service-areas/naperville-stump-grinding", label: "Naperville" },
+  { href: "/service-areas/hinsdale-stump-grinding", label: "Hinsdale" },
+  { href: "/service-areas/wheaton-stump-grinding", label: "Wheaton" },
+  { href: "/service-areas/downers-grove-stump-grinding", label: "Downers Grove" },
+  { href: "/service-areas/glen-ellyn-stump-grinding", label: "Glen Ellyn" },
+  { href: "/service-areas/oak-brook-stump-grinding", label: "Oak Brook" },
+  { href: "/service-areas/elmhurst-stump-grinding", label: "Elmhurst" },
+  { href: "/service-areas/la-grange-stump-grinding", label: "La Grange" },
+  { href: "/service-areas/lemont-stump-grinding", label: "Lemont" },
+  { href: "/service-areas/homer-glen-stump-grinding", label: "Homer Glen" },
+  { href: "/service-areas/burr-ridge-stump-grinding", label: "Burr Ridge" },
+  { href: "/service-areas/darien-stump-grinding", label: "Darien" },
 ];
 
-// JSON-LD LocalBusiness schema
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -75,46 +75,51 @@ export default function HomePage() {
         showTrustBadges
       />
 
-      {/* SERVICES */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="section-title">Our Services</h2>
-            <p className="section-sub mt-2 max-w-2xl mx-auto">
+      {/* SERVICES — 1px separator grid matching mockup */}
+      <section className="section">
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: 0 }}>
+            <div className="eyebrow">What We Do</div>
+            <h2 className="section-h2" style={{ marginLeft: 'auto', marginRight: 'auto' }}>Our Services</h2>
+            <p className="section-sub" style={{ maxWidth: 560, margin: '0 auto' }}>
               From a single stump to complete tree removal — we handle it all with professional equipment and a commitment to clean, careful work.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--line)', border: '1px solid var(--line)', borderRadius: 5, overflow: 'hidden', marginTop: 44 }}>
             {SERVICES.map((s) => (
-              <ServiceCard
-                key={s.slug}
-                icon={s.icon}
-                title={s.title}
-                description={s.description}
-                href={`/${s.slug}`}
-              />
+              <Link key={s.slug} href={`/${s.slug}`} style={{ background: 'var(--white)', padding: '32px 26px 28px', display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit', transition: 'background .16s' }} className="service-tile">
+                <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--green-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18, fontSize: 20 }}>
+                  {s.icon}
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 10, lineHeight: 1.3 }}>{s.title}</h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--text-soft)', lineHeight: 1.65, flex: 1, marginBottom: 20 }}>{s.description}</p>
+                <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)', display: 'flex', alignItems: 'center', gap: 5 }}>
+                  Learn More
+                  <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
+        <style>{`.service-tile:hover { background: var(--green-pale) !important; }`}</style>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="py-16 bg-brand-light">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="section-title">Why Chicago Homeowners Choose Us</h2>
-            <p className="section-sub mt-2 max-w-2xl mx-auto">
-              We&apos;re a local, owner-operated business — not a franchise. That means faster service, better communication, and work you can count on.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {WHY_CHOOSE_US.map((item) => (
-              <div key={item.title} className="flex gap-4 bg-white rounded-xl p-6 border border-gray-200 card-hover">
-                <span className="text-3xl flex-shrink-0">{item.icon}</span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-navy-900 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
+      {/* WHY CHOOSE US — numbered circles matching mockup */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="eyebrow">Why Choose Us</div>
+          <h2 className="section-h2">Why Chicago Homeowners Choose Us</h2>
+          <p className="section-sub">
+            We&apos;re a local, owner-operated business — not a franchise. That means faster service, better communication, and work you can count on.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 48 }}>
+            {WHY_CHOOSE_US.map((item, i) => (
+              <div key={item.title} style={{ padding: '32px 28px', background: 'var(--white)', border: '1px solid var(--line)', borderRadius: 4 }}>
+                <div style={{ width: 36, height: 36, background: 'var(--green-dark)', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>
+                  {i + 1}
                 </div>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 9 }}>{item.title}</h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--text-soft)', lineHeight: 1.68 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -122,67 +127,66 @@ export default function HomePage() {
       </section>
 
       {/* PROCESS */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="section-title">How It Works</h2>
-            <p className="section-sub mt-2">Simple, straightforward, and stress-free from start to finish.</p>
+      <section className="section">
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: 0 }}>
+            <div className="eyebrow">Our Process</div>
+            <h2 className="section-h2" style={{ marginLeft: 'auto', marginRight: 'auto' }}>How It Works</h2>
+            <p className="section-sub" style={{ margin: '0 auto' }}>Simple, straightforward, and stress-free from start to finish.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PROCESS_STEPS.map((step, idx) => (
-              <div key={step.step} className="relative">
-                {idx < PROCESS_STEPS.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-200 z-0" style={{ width: "calc(100% - 2rem)" }} />
-                )}
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-navy-900 text-white rounded-xl flex items-center justify-center font-display text-2xl font-black mb-4">
-                    {step.step}
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-navy-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.body}</p>
+          <div style={{ display: 'flex', gap: 0, position: 'relative', marginTop: 48 }}>
+            <div style={{ position: 'absolute', top: 28, left: 'calc(12.5%)', right: 'calc(12.5%)', height: 1, background: 'var(--line)' }} />
+            {PROCESS_STEPS.map((step) => (
+              <div key={step.step} style={{ flex: 1, textAlign: 'center', padding: '0 12px' }}>
+                <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--green)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, margin: '0 auto 20px', position: 'relative', zIndex: 1, border: '3px solid var(--bg-soft)' }}>
+                  {step.step}
                 </div>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 9 }}>{step.title}</h3>
+                <p style={{ fontSize: '13.5px', color: 'var(--text-soft)', lineHeight: 1.65 }}>{step.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SERVICE AREAS */}
-      <section className="py-16 bg-brand-light">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-8">
-            <h2 className="section-title mb-2">Service Areas</h2>
-            <p className="section-sub">
-              We serve Chicago and the surrounding suburbs in DuPage, Cook, and Will Counties.
-            </p>
-          </div>
-          <ServiceAreaGrid areas={FEATURED_AREAS} />
-          <div className="mt-6 text-center">
-            <Link href="/service-areas" className="btn-secondary">
-              View All Service Areas
+      {/* SERVICE AREAS — column list with › prefix matching mockup */}
+      <section className="section section-warm">
+        <div className="container">
+          <div className="eyebrow">Where We Work</div>
+          <h2 className="section-h2">Service Areas</h2>
+          <p className="section-sub">
+            We serve Chicago and the surrounding suburbs in DuPage, Cook, and Will Counties.
+          </p>
+          <div style={{ columns: 4, columnGap: 24, marginTop: 36 }}>
+            {FEATURED_AREAS.map((a) => (
+              <Link
+                key={a.href}
+                href={a.href}
+                style={{ display: 'block', fontSize: 14, color: 'var(--green)', fontWeight: 600, padding: '5px 0', borderBottom: '1px solid var(--line)', marginBottom: 0, transition: 'color .13s', breakInside: 'avoid' }}
+                className="area-link"
+              >
+                ›&nbsp; {a.label}
+              </Link>
+            ))}
+            <Link href="/service-areas" style={{ display: 'block', fontSize: 14, color: 'var(--green)', fontWeight: 700, padding: '12px 0 5px', breakInside: 'avoid' }}>
+              View All Service Areas →
             </Link>
           </div>
+          <style>{`.area-link:hover { color: var(--green-dark) !important; }`}</style>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-sub mt-2">Hundreds of satisfied homeowners across Chicagoland.</p>
-          </div>
-          <Testimonials testimonials={TESTIMONIALS} />
-        </div>
-      </section>
+      <Testimonials testimonials={TESTIMONIALS} />
 
       {/* FAQ */}
-      <section className="py-16 bg-brand-light">
-        <div className="max-w-3xl mx-auto px-4">
-          <FAQAccordion items={HOME_FAQ} title="Common Questions" />
-          <div className="mt-6 text-center">
-            <Link href="/faq" className="text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-              See All FAQs →
+      <section className="section section-alt">
+        <div className="container" style={{ maxWidth: 760 }}>
+          <div className="eyebrow">Common Questions</div>
+          <FAQAccordion items={HOME_FAQ} title="" />
+          <div style={{ marginTop: 24, textAlign: 'center' }}>
+            <Link href="/faq" style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
+              See All FAQs &rarr;
             </Link>
           </div>
         </div>

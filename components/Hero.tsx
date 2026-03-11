@@ -16,68 +16,85 @@ export default function Hero({
   showTrustBadges = true,
   variant = "home",
 }: HeroProps) {
-  return (
-    <section className="relative overflow-hidden bg-hero-pattern">
-      {/* Background texture */}
-      <div className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
+  const isHome = variant === "home";
 
-      <div className={`relative max-w-7xl mx-auto px-4 ${variant === "home" ? "py-20 md:py-28" : "py-14 md:py-20"}`}>
-        <div className="max-w-3xl">
+  return (
+    <section style={{ position: 'relative', minHeight: isHome ? 520 : 340, display: 'flex', alignItems: 'stretch', background: 'var(--green-deep)', overflow: 'hidden' }}>
+      {/* Background layers */}
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 900px 600px at 75% 30%, rgba(45,122,65,.35) 0%, transparent 60%), linear-gradient(175deg, #071a0d 0%, #0d2714 35%, #143f20 65%, #1a5028 100%)' }} />
+
+      {/* Tree silhouette SVG layer */}
+      <div style={{
+        position: 'absolute', bottom: 0, left: 0, right: 0, height: '100%',
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 520' preserveAspectRatio='xMidYMax slice'%3E%3Cellipse cx='900' cy='260' rx='120' ry='160' fill='%230f3318' opacity='.7'/%3E%3Cellipse cx='1050' cy='240' rx='100' ry='180' fill='%230d2c14' opacity='.8'/%3E%3Cellipse cx='780' cy='280' rx='90' ry='130' fill='%23102e1a' opacity='.6'/%3E%3Cellipse cx='950' cy='290' rx='140' ry='200' fill='%231a4a28' opacity='.85'/%3E%3Cellipse cx='1100' cy='270' rx='110' ry='220' fill='%23143820' opacity='.9'/%3E%3Cellipse cx='820' cy='310' rx='100' ry='160' fill='%231d5030' opacity='.75'/%3E%3Cellipse cx='1000' cy='360' rx='180' ry='260' fill='%23214a2c' opacity='.95'/%3E%3Cellipse cx='1150' cy='340' rx='150' ry='280' fill='%231a3d22' opacity='.95'/%3E%3Crect x='990' y='400' width='20' height='120' fill='%230d1f12' rx='3'/%3E%3Crect x='1140' y='420' width='18' height='100' fill='%230d1f12' rx='3'/%3E%3Crect x='810' y='390' width='14' height='130' fill='%230d1f12' rx='3'/%3E%3C/svg%3E")`,
+        backgroundSize: 'cover', backgroundPosition: 'bottom right', pointerEvents: 'none',
+      }} />
+
+      {/* Sunlight shaft */}
+      <div style={{
+        position: 'absolute', top: -60, left: '38%', width: 340, height: '120%',
+        background: 'linear-gradient(170deg, rgba(255,220,100,.04) 0%, rgba(255,220,100,.0) 100%)',
+        transform: 'rotate(-8deg)', pointerEvents: 'none',
+      }} />
+
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(7,26,13,.88) 0%, rgba(7,26,13,.70) 42%, rgba(7,26,13,.15) 100%)' }} />
+
+      {/* Content */}
+      <div className="container" style={{ position: 'relative', zIndex: 2, width: '100%', display: 'flex', alignItems: 'center', paddingTop: isHome ? 64 : 48, paddingBottom: isHome ? 64 : 48 }}>
+        <div style={{ maxWidth: isHome ? 640 : 700 }}>
           {badgeText && (
-            <span className="inline-block bg-orange-600 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-5">
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 2, padding: '5px 13px', fontSize: 12, fontWeight: 700, color: '#7ecf8e', letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: 22 }}>
               {badgeText}
-            </span>
+            </div>
           )}
 
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-5 tracking-tight">
+          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: isHome ? 'clamp(30px, 4.5vw, 52px)' : 'clamp(26px, 3.5vw, 42px)', fontWeight: 700, color: '#fff', lineHeight: 1.18, letterSpacing: '-.02em', marginBottom: 20 }}>
             {headline}
           </h1>
 
-          <p className="text-lg md:text-xl text-navy-200 leading-relaxed mb-8 max-w-2xl">
+          <p style={{ fontSize: '16.5px', color: 'rgba(255,255,255,.72)', lineHeight: 1.72, fontWeight: 300, marginBottom: 34, maxWidth: 520 }}>
             {subheadline}
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-10">
-            <Link href="/request-quote" className="btn-primary text-base py-4 px-8 text-center justify-center">
-              Get Free Quote
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: showTrustBadges ? 44 : 0 }}>
+            <Link href="/request-quote" style={{ background: 'var(--green-mid)', color: '#fff', padding: '13px 26px', borderRadius: 3, fontSize: '14.5px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'background .15s', border: '2px solid var(--green-mid)' }}>
+              Get Free Quote <ArrowIcon />
             </Link>
-            <a href={PHONE_HREF} className="btn-outline-white text-base py-4 px-8 text-center justify-center">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              Call {PHONE}
+            <a href={PHONE_HREF} style={{ color: 'rgba(255,255,255,.85)', background: 'transparent', border: '2px solid rgba(255,255,255,.3)', padding: '11px 24px', borderRadius: 3, fontSize: '14.5px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+              <PhoneIcon /> Call {PHONE}
             </a>
           </div>
 
           {/* Trust badges */}
           {showTrustBadges && (
-            <div className="flex flex-wrap gap-4">
-              {[
-                "✓ Fully Insured",
-                "✓ Free Estimates",
-                "✓ Same-Week Service",
-                "✓ Cleanup Included",
-              ].map((badge) => (
-                <span key={badge} className="text-sm text-navy-200 font-medium">
-                  {badge}
-                </span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px 22px', paddingTop: 28, borderTop: '1px solid rgba(255,255,255,.1)' }}>
+              {['Free On-Site Estimates', 'Same-Week Availability', 'Fully Insured', 'Cleanup Included'].map((s) => (
+                <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>
+                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#5dc97a', flexShrink: 0 }} />
+                  {s}
+                </div>
               ))}
             </div>
           )}
         </div>
       </div>
-
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 48h1440V24C1440 24 1080 0 720 0S0 24 0 24V48z" fill="white" />
-        </svg>
-      </div>
     </section>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.128.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L9.17 9.91a16 16 0 006.92 6.92l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
   );
 }

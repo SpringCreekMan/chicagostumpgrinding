@@ -3,9 +3,8 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import { CTABanner, ServiceAreaGrid } from "@/components/UIComponents";
 import FAQAccordion from "@/components/FAQAccordion";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, PHONE, PHONE_HREF } from "@/lib/constants";
 
-// ── STUMP REMOVAL PAGE ──────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: "Stump Removal Chicago | Complete Stump & Root Extraction",
   description:
@@ -53,80 +52,80 @@ export default function StumpRemovalPage() {
         badgeText="Full Root Extraction"
       />
 
-      <section className="py-14 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-2 space-y-8">
-              <div>
-                <h2 className="font-display text-3xl font-bold text-navy-900 mb-4">What Is Stump Removal?</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
+      <section className="section">
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
+            <div>
+              <div style={{ marginBottom: 48 }}>
+                <div className="eyebrow">About the Service</div>
+                <h2 className="section-h2">What Is Stump Removal?</h2>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300, marginBottom: 16 }}>
                   Stump removal is the complete extraction of a tree stump and its root system from the ground. Unlike stump grinding — which leaves roots in place — stump removal clears everything, leaving a hole that can be backfilled for a truly fresh start.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300 }}>
                   It&apos;s more labor-intensive and costs more than grinding, but it&apos;s the right choice for specific situations where a completely clean excavation is needed.
                 </p>
               </div>
 
-              <div>
-                <h2 className="font-display text-3xl font-bold text-navy-900 mb-4">When to Choose Stump Removal Over Grinding</h2>
-                <div className="space-y-3">
+              <div style={{ marginBottom: 48 }}>
+                <div className="eyebrow">When to Choose Removal</div>
+                <h2 className="section-h2">When to Choose Stump Removal Over Grinding</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 16 }}>
                   {[
                     { title: "New Construction", desc: "Building a foundation, driveway, or patio where roots would interfere." },
                     { title: "Replanting", desc: "You want to plant a new tree in exactly the same spot." },
                     { title: "Root Problems", desc: "Roots are heaving pavers, blocking drainage, or damaging structures." },
                     { title: "Complete Landscaping Renovation", desc: "You need a fully cleared area for a total redesign." },
                   ].map((c) => (
-                    <div key={c.title} className="flex gap-4 bg-brand-light rounded-lg p-4 border border-gray-200">
-                      <span className="text-orange-600 font-bold mt-0.5 flex-shrink-0">→</span>
+                    <div key={c.title} style={{ display: 'flex', gap: 14, background: 'var(--green-pale)', borderRadius: 4, padding: '16px 20px', border: '1px solid var(--line)' }}>
+                      <span style={{ color: 'var(--green)', fontWeight: 700, flexShrink: 0, marginTop: 2 }}>&rsaquo;</span>
                       <div>
-                        <span className="font-semibold text-navy-900">{c.title}:</span>{" "}
-                        <span className="text-gray-700 text-sm">{c.desc}</span>
+                        <span style={{ fontWeight: 700, color: 'var(--green-dark)', fontSize: 14 }}>{c.title}:</span>{" "}
+                        <span style={{ fontSize: 13, color: 'var(--text-soft)' }}>{c.desc}</span>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div>
-                <h2 className="font-display text-3xl font-bold text-navy-900 mb-4">Pricing</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Stump removal costs more than stump grinding due to the added labor and equipment requirements. Typical range in the Chicago area is <strong>$300–$800+ per stump</strong>, depending on size and root extent.
+              <div style={{ marginBottom: 48 }}>
+                <div className="eyebrow">Transparent Pricing</div>
+                <h2 className="section-h2">Pricing</h2>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300, marginBottom: 16 }}>
+                  Stump removal costs more than stump grinding due to the added labor and equipment requirements. Typical range in the Chicago area is <strong style={{ color: 'var(--text)', fontWeight: 700 }}>$300–$800+ per stump</strong>, depending on size and root extent.
                 </p>
-                <p className="text-sm text-gray-500">
+                <p style={{ fontSize: 13, color: 'var(--text-soft)' }}>
                   Not sure if you need grinding or removal?{" "}
-                  <Link href="/blog/stump-grinding-vs-stump-removal" className="text-orange-600 underline">
-                    Read our comparison guide
-                  </Link>{" "}
-                  or <Link href="/contact" className="text-orange-600 underline">ask us directly</Link>.
+                  <Link href="/blog/stump-grinding-vs-stump-removal" style={{ color: 'var(--green)', fontWeight: 600 }}>Read our comparison guide</Link>{" "}
+                  or <Link href="/contact" style={{ color: 'var(--green)', fontWeight: 600 }}>ask us directly</Link>.
                 </p>
               </div>
 
-              <FAQAccordion items={FAQ_REMOVAL} title="Stump Removal FAQs" />
+              <div className="eyebrow">Common Questions</div>
+              <FAQAccordion items={FAQ_REMOVAL} title="" />
             </div>
 
-            <aside className="space-y-6">
-              <div className="bg-navy-900 text-white rounded-xl p-6">
-                <h3 className="font-display text-xl font-bold mb-3">Get Your Free Quote</h3>
-                <p className="text-navy-300 text-sm mb-4">We&apos;ll assess your stump and advise on grinding vs. removal.</p>
-                <Link href="/request-quote" className="btn-primary w-full justify-center mb-3 text-sm">
+            <aside style={{ position: 'sticky', top: 24 }}>
+              <div style={{ background: 'var(--green-dark)', borderRadius: 4, padding: '28px 24px', marginBottom: 20 }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 10 }}>Get Your Free Quote</h3>
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,.55)', lineHeight: 1.6, marginBottom: 18 }}>We&apos;ll assess your stump and advise on grinding vs. removal.</p>
+                <Link href="/request-quote" className="btn btn-solid" style={{ width: '100%', justifyContent: 'center', marginBottom: 10, background: 'var(--green-mid)', borderColor: 'var(--green-mid)' }}>
                   Request Free Estimate
                 </Link>
-                <a href="tel:+13125550188" className="btn-outline-white w-full justify-center text-sm">
-                  📞 (312) 555-0188
+                <a href={PHONE_HREF} className="btn btn-white-outline" style={{ width: '100%', justifyContent: 'center', fontSize: 13 }}>
+                  {PHONE}
                 </a>
               </div>
-              <div className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-display text-lg font-bold text-navy-900 mb-3">Related Services</h3>
-                <ul className="space-y-2">
+              <div style={{ background: 'var(--white)', border: '1px solid var(--line)', borderRadius: 4, padding: '24px 22px' }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 14 }}>Related Services</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {[
                     { href: "/stump-grinding", label: "Stump Grinding" },
                     { href: "/tree-removal", label: "Tree Removal" },
                     { href: "/tree-service", label: "Tree Service" },
                   ].map((s) => (
-                    <li key={s.href}>
-                      <Link href={s.href} className="text-sm text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1">
-                        → {s.label}
-                      </Link>
+                    <li key={s.href} style={{ padding: '5px 0' }}>
+                      <Link href={s.href} style={{ fontSize: 13, color: 'var(--green)', fontWeight: 600 }}>&rsaquo; {s.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -136,8 +135,8 @@ export default function StumpRemovalPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-brand-light">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="section section-warm">
+        <div className="container">
           <ServiceAreaGrid areas={AREAS_REMOVAL} title="Serving These Chicago Suburbs" />
         </div>
       </section>

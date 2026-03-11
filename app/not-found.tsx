@@ -2,18 +2,18 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="min-h-[60vh] flex items-center justify-center bg-white">
-      <div className="text-center px-4">
-        <div className="text-8xl mb-6">🌳</div>
-        <h1 className="font-display text-5xl font-black text-navy-900 mb-3">404 — Page Not Found</h1>
-        <p className="text-gray-600 text-lg mb-8 max-w-md mx-auto">
+    <section style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-soft)' }}>
+      <div style={{ textAlign: 'center', padding: '0 20px' }}>
+        <div style={{ fontSize: 80, marginBottom: 24 }}>🌳</div>
+        <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700, color: 'var(--green-dark)', marginBottom: 12 }}>404 — Page Not Found</h1>
+        <p style={{ fontSize: 17, color: 'var(--text-soft)', marginBottom: 32, maxWidth: 440, margin: '0 auto 32px', lineHeight: 1.6 }}>
           We couldn&apos;t find that page. Let&apos;s get you back to the right place.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/" className="btn-primary justify-center">
+        <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link href="/" className="btn btn-solid" style={{ padding: '12px 24px', fontSize: 15 }}>
             Go Home
           </Link>
-          <Link href="/request-quote" className="btn-secondary justify-center">
+          <Link href="/request-quote" className="btn btn-outline" style={{ padding: '12px 24px', fontSize: 15 }}>
             Request a Quote
           </Link>
         </div>

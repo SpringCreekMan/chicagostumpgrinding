@@ -5,32 +5,26 @@ import { PHONE, PHONE_HREF } from "@/lib/constants";
 interface CTABannerProps {
   headline?: string;
   subtext?: string;
-  variant?: "dark" | "orange";
 }
 
 export function CTABanner({
   headline = "Ready for a Stump-Free Yard?",
   subtext = "Get a free, no-obligation estimate. We respond fast — usually within a few hours.",
-  variant = "dark",
 }: CTABannerProps) {
-  const bg = variant === "orange" ? "bg-orange-600" : "bg-navy-900";
-  const textColor = "text-white";
-  const subColor = variant === "orange" ? "text-orange-100" : "text-navy-300";
-
   return (
-    <section className={`${bg} py-14`}>
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className={`font-display text-3xl md:text-4xl font-bold ${textColor} mb-3`}>
+    <section style={{ background: 'var(--green-dark)', padding: '70px 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 800px 400px at 50% 100%, rgba(45,122,65,.3) 0%, transparent 60%)', pointerEvents: 'none' }} />
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+        <div style={{ color: '#7ecf8e', fontSize: 11, textTransform: 'uppercase', letterSpacing: '.14em', fontWeight: 700, marginBottom: 14 }}>Get Started Today</div>
+        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 700, color: '#fff', letterSpacing: '-.02em', marginBottom: 14, lineHeight: 1.2 }}>
           {headline}
         </h2>
-        <p className={`${subColor} text-lg mb-8`}>{subtext}</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/request-quote" className="btn-primary py-3.5 px-8 text-base justify-center">
-            Get Free Quote
-          </Link>
-          <a href={PHONE_HREF} className="btn-outline-white py-3.5 px-8 text-base justify-center">
-            📞 Call {PHONE}
-          </a>
+        <p style={{ fontSize: 17, color: 'rgba(255,255,255,.6)', fontWeight: 300, marginBottom: 36 }}>
+          {subtext}
+        </p>
+        <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link href="/request-quote" className="btn btn-white">Request Free Estimate</Link>
+          <a href={PHONE_HREF} className="btn btn-white-outline">{PHONE}</a>
         </div>
       </div>
     </section>
@@ -49,49 +43,20 @@ export function ServiceCard({ icon, title, description, href }: ServiceCardProps
   return (
     <Link
       href={href}
-      className="group block bg-white rounded-xl border border-gray-200 p-6 card-hover"
+      style={{ background: 'var(--white)', padding: '32px 26px 28px', display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit', transition: 'background .16s', border: '1px solid var(--line)', borderRadius: 4 }}
+      className="service-card"
     >
-      <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="font-display text-xl font-bold text-navy-900 mb-2 group-hover:text-orange-600 transition-colors">
-        {title}
-      </h3>
-      <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
-      <span className="text-orange-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+      <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--green-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18, fontSize: 20 }}>
+        {icon}
+      </div>
+      <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 10, lineHeight: 1.3 }}>{title}</h3>
+      <p style={{ fontSize: '13.5px', color: 'var(--text-soft)', lineHeight: 1.65, flex: 1, marginBottom: 20 }}>{description}</p>
+      <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)', display: 'flex', alignItems: 'center', gap: 5 }}>
         Learn More
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+        <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </span>
+      <style>{`.service-card:hover { background: var(--green-pale) !important; }`}</style>
     </Link>
-  );
-}
-
-// Testimonials
-interface Testimonial {
-  text: string;
-  name: string;
-  location: string;
-  initials: string;
-}
-
-export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {testimonials.map((t, i) => (
-        <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 card-hover">
-          <div className="flex gap-0.5 mb-3">
-            {Array.from({ length: 5 }).map((_, s) => (
-              <span key={s} className="text-yellow-400 text-lg">★</span>
-            ))}
-          </div>
-          <p className="text-gray-700 text-sm leading-relaxed italic mb-4">&ldquo;{t.text}&rdquo;</p>
-          <div>
-            <p className="font-semibold text-navy-900 text-sm">{t.name}</p>
-            <p className="text-gray-500 text-xs">{t.location}</p>
-          </div>
-        </div>
-      ))}
-    </div>
   );
 }
 
@@ -105,19 +70,20 @@ interface AreaLink {
 export function ServiceAreaGrid({ areas, title }: { areas: AreaLink[]; title?: string }) {
   return (
     <div>
-      {title && <h2 className="section-title mb-6">{title}</h2>}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+      {title && <h2 className="section-h2" style={{ marginBottom: 24 }}>{title}</h2>}
+      <div style={{ columns: 4, columnGap: 24, marginTop: title ? 0 : 36 }}>
         {areas.map((a) => (
           <Link
             key={a.href}
             href={a.href}
-            className="flex flex-col bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-navy-400 hover:bg-navy-50 transition-all card-hover group"
+            style={{ display: 'block', fontSize: 14, color: 'var(--green)', fontWeight: 600, padding: '5px 0', borderBottom: '1px solid var(--line)', marginBottom: 0, transition: 'color .13s', breakInside: 'avoid' }}
+            className="area-link"
           >
-            <span className="font-semibold text-navy-900 text-sm group-hover:text-navy-700">{a.label}</span>
-            {a.sub && <span className="text-xs text-gray-500 mt-0.5">{a.sub}</span>}
+            ›&nbsp; {a.label}
           </Link>
         ))}
       </div>
+      <style>{`.area-link:hover { color: var(--green-dark) !important; }`}</style>
     </div>
   );
 }
@@ -146,21 +112,17 @@ export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <nav aria-label="Breadcrumb" className="text-sm text-gray-500">
-        <ol className="flex flex-wrap items-center gap-1">
-          {crumbs.map((c, i) => (
-            <li key={i} className="flex items-center gap-1">
-              {i > 0 && <span className="text-gray-400">/</span>}
-              {c.href ? (
-                <Link href={c.href} className="hover:text-navy-700 transition-colors">
-                  {c.label}
-                </Link>
-              ) : (
-                <span className="text-gray-800 font-medium">{c.label}</span>
-              )}
-            </li>
-          ))}
-        </ol>
+      <nav aria-label="Breadcrumb" style={{ fontSize: 12, color: 'rgba(255,255,255,.45)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}>
+        {crumbs.map((c, i) => (
+          <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            {i > 0 && <span style={{ opacity: .4 }}>&rsaquo;</span>}
+            {c.href ? (
+              <Link href={c.href} style={{ color: 'inherit' }}>{c.label}</Link>
+            ) : (
+              <span>{c.label}</span>
+            )}
+          </span>
+        ))}
       </nav>
     </>
   );

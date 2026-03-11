@@ -3,7 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import { CTABanner, ServiceAreaGrid } from "@/components/UIComponents";
 import FAQAccordion from "@/components/FAQAccordion";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Tree Removal Chicago | Safe Tree Removal Across Chicago Suburbs",
@@ -56,16 +56,17 @@ export default function TreeRemovalPage() {
         badgeText="Dead & Hazard Tree Removal"
       />
 
-      <section className="py-14 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-2 space-y-8">
-              <div>
-                <h2 className="font-display text-3xl font-bold text-navy-900 mb-4">When to Remove a Tree</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
+      <section className="section">
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
+            <div>
+              <div style={{ marginBottom: 48 }}>
+                <div className="eyebrow">When It&apos;s Time</div>
+                <h2 className="section-h2">When to Remove a Tree</h2>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300, marginBottom: 20 }}>
                   Tree removal is sometimes the only safe option. Our experienced team can assess any tree and give you an honest evaluation — and we&apos;ll always tell you if the tree can be saved with service rather than removed.
                 </p>
-                <div className="space-y-3">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {[
                     { icon: "💀", title: "Dead or Dying Trees", desc: "Dead trees are a serious hazard. Falling limbs or the whole tree can cause significant property damage or injury." },
                     { icon: "🌪️", title: "Storm-Damaged Trees", desc: "Partially uprooted or severely damaged trees often cannot be saved and pose ongoing risk." },
@@ -73,20 +74,21 @@ export default function TreeRemovalPage() {
                     { icon: "🦠", title: "Disease or Pest Infestation", desc: "Some diseases and insects (like the Emerald Ash Borer) can make trees unsalvageable." },
                     { icon: "🏗️", title: "Construction or Renovation", desc: "Site clearing for additions, pools, or landscaping projects may require tree removal." },
                   ].map((item) => (
-                    <div key={item.title} className="flex gap-4 items-start bg-brand-light rounded-lg p-4 border border-gray-200">
-                      <span className="text-2xl">{item.icon}</span>
+                    <div key={item.title} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', background: 'var(--green-pale)', borderRadius: 4, padding: '16px 20px', border: '1px solid var(--line)' }}>
+                      <span style={{ fontSize: 24 }}>{item.icon}</span>
                       <div>
-                        <h3 className="font-semibold text-navy-900">{item.title}</h3>
-                        <p className="text-gray-600 text-sm">{item.desc}</p>
+                        <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 4 }}>{item.title}</h3>
+                        <p style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.55 }}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div>
-                <h2 className="font-display text-3xl font-bold text-navy-900 mb-4">Our Tree Removal Process</h2>
-                <ol className="space-y-4">
+              <div style={{ marginBottom: 48 }}>
+                <div className="eyebrow">Our Process</div>
+                <h2 className="section-h2">Our Tree Removal Process</h2>
+                <ol style={{ listStyle: 'none', padding: 0, margin: 0, marginTop: 20 }}>
                   {[
                     { n: "1", title: "Free Assessment & Quote", desc: "We evaluate the tree, assess risks and access, and provide a written quote before any work." },
                     { n: "2", title: "Permit Coordination", desc: "If your municipality requires a permit, we can advise and help coordinate the process." },
@@ -94,52 +96,53 @@ export default function TreeRemovalPage() {
                     { n: "4", title: "Cleanup & Hauling", desc: "We chip all branches and haul debris. Wood rounds can be left for firewood on request." },
                     { n: "5", title: "Stump Grinding (Optional)", desc: "Complete the job by grinding the stump — we offer combined pricing when booked together." },
                   ].map((step) => (
-                    <li key={step.n} className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-navy-900 text-white font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <li key={step.n} style={{ display: 'flex', gap: 16, marginBottom: 18 }}>
+                      <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--green-dark)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-serif)', fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
                         {step.n}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-navy-900">{step.title}</h3>
-                        <p className="text-gray-600 text-sm">{step.desc}</p>
+                        <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 4 }}>{step.title}</h3>
+                        <p style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.55 }}>{step.desc}</p>
                       </div>
                     </li>
                   ))}
                 </ol>
               </div>
 
-              <FAQAccordion items={FAQ_TR} title="Tree Removal FAQs" />
+              <div className="eyebrow">Common Questions</div>
+              <FAQAccordion items={FAQ_TR} title="" />
             </div>
 
-            <aside className="space-y-6">
-              <div className="bg-navy-900 text-white rounded-xl p-6">
-                <h3 className="font-display text-xl font-bold mb-3">Free Tree Removal Quote</h3>
-                <p className="text-navy-300 text-sm mb-4">We&apos;ll assess your tree and provide a fair, written estimate at no charge.</p>
-                <Link href="/request-quote" className="btn-primary w-full justify-center mb-3 text-sm">
+            <aside style={{ position: 'sticky', top: 24 }}>
+              <div style={{ background: 'var(--green-dark)', borderRadius: 4, padding: '28px 24px', marginBottom: 20 }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 10 }}>Free Tree Removal Quote</h3>
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,.55)', lineHeight: 1.6, marginBottom: 18 }}>We&apos;ll assess your tree and provide a fair, written estimate at no charge.</p>
+                <Link href="/request-quote" className="btn btn-solid" style={{ width: '100%', justifyContent: 'center', marginBottom: 10, background: 'var(--green-mid)', borderColor: 'var(--green-mid)' }}>
                   Request Free Estimate
                 </Link>
-                <a href="tel:+13125550188" className="btn-outline-white w-full justify-center text-sm">
-                  📞 (312) 555-0188
+                <a href={PHONE_HREF} className="btn btn-white-outline" style={{ width: '100%', justifyContent: 'center', fontSize: 13 }}>
+                  {PHONE}
                 </a>
               </div>
-              <div className="bg-red-50 border border-red-200 rounded-xl p-5">
-                <h3 className="font-semibold text-red-900 mb-2">🚨 Hazardous Tree?</h3>
-                <p className="text-red-800 text-sm mb-3">If a tree is an immediate safety risk, call us now. We can often respond same-day for emergency removals.</p>
-                <a href="tel:+13125550188" className="text-red-700 font-bold text-sm underline">(312) 555-0188</a>
+
+              <div style={{ background: 'var(--green-pale)', border: '1px solid var(--line)', borderRadius: 4, padding: '22px 20px', marginBottom: 20 }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 8 }}>🚨 Hazardous Tree?</h3>
+                <p style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.55, marginBottom: 12 }}>If a tree is an immediate safety risk, call us now. We can often respond same-day for emergency removals.</p>
+                <a href={PHONE_HREF} style={{ fontSize: 13, color: 'var(--green)', fontWeight: 700 }}>{PHONE}</a>
               </div>
-              <div className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-display text-lg font-bold text-navy-900 mb-3">Add Stump Grinding</h3>
-                <p className="text-gray-600 text-sm mb-3">Book stump grinding at the same time as your tree removal and save on combined service pricing.</p>
-                <Link href="/stump-grinding" className="text-sm text-orange-600 hover:text-orange-700 font-medium">
-                  → Learn About Stump Grinding
-                </Link>
+
+              <div style={{ background: 'var(--white)', border: '1px solid var(--line)', borderRadius: 4, padding: '24px 22px' }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 10 }}>Add Stump Grinding</h3>
+                <p style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.55, marginBottom: 12 }}>Book stump grinding at the same time as your tree removal and save on combined service pricing.</p>
+                <Link href="/stump-grinding" style={{ fontSize: 13, color: 'var(--green)', fontWeight: 600 }}>&rsaquo; Learn About Stump Grinding</Link>
               </div>
             </aside>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-brand-light">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="section section-warm">
+        <div className="container">
           <ServiceAreaGrid areas={REMOVAL_AREAS} title="Tree Removal Service Areas" />
         </div>
       </section>

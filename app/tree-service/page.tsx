@@ -3,7 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import { CTABanner, ServiceAreaGrid } from "@/components/UIComponents";
 import FAQAccordion from "@/components/FAQAccordion";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Tree Service Chicago | Tree Trimming & Pruning Across Chicago Suburbs",
@@ -53,16 +53,17 @@ export default function TreeServicePage() {
         badgeText="Tree Trimming & Care"
       />
 
-      <section className="py-14 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-2 space-y-8">
-              <div>
-                <h2 className="font-display text-3xl font-bold text-navy-900 mb-4">Our Tree Services</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Chicago Tree & Stump Specialists provides full-service tree care for residential and commercial properties across Chicago&apos;s western and southwestern suburbs. Our certified professionals handle everything from routine annual trimming to major hazard removals.
+      <section className="section">
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 52, alignItems: 'start' }}>
+            <div>
+              <div style={{ marginBottom: 48 }}>
+                <div className="eyebrow">What We Offer</div>
+                <h2 className="section-h2">Our Tree Services</h2>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300, marginBottom: 24 }}>
+                  Chicago Tree &amp; Stump Specialists provides full-service tree care for residential and commercial properties across Chicago&apos;s western and southwestern suburbs. Our certified professionals handle everything from routine annual trimming to major hazard removals.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
                   {[
                     { icon: "✂️", title: "Tree Trimming & Pruning", desc: "Remove dead, diseased, or crossing branches. Improve structure and appearance." },
                     { icon: "👑", title: "Crown Thinning & Reduction", desc: "Reduce wind load, improve light penetration, and maintain tree health." },
@@ -71,68 +72,78 @@ export default function TreeServicePage() {
                     { icon: "⛈️", title: "Storm Damage Response", desc: "Emergency cleanup and stabilization after storm events." },
                     { icon: "🪓", title: "Tree Removal", desc: "Complete tree removal when needed. See our dedicated tree removal page." },
                   ].map((s) => (
-                    <div key={s.title} className="bg-brand-light rounded-lg p-5 border border-gray-200">
-                      <div className="text-2xl mb-2">{s.icon}</div>
-                      <h3 className="font-semibold text-navy-900 mb-1">{s.title}</h3>
-                      <p className="text-gray-600 text-sm">{s.desc}</p>
+                    <div key={s.title} style={{ background: 'var(--green-pale)', borderRadius: 4, padding: '20px', border: '1px solid var(--line)' }}>
+                      <div style={{ fontSize: 24, marginBottom: 10 }}>{s.icon}</div>
+                      <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 6 }}>{s.title}</h3>
+                      <p style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.55 }}>{s.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div>
-                <h2 className="font-display text-3xl font-bold text-navy-900 mb-4">Pricing Overview</h2>
-                <p className="text-gray-700 leading-relaxed mb-3">
+              <div style={{ marginBottom: 48 }}>
+                <div className="eyebrow">Transparent Pricing</div>
+                <h2 className="section-h2">Pricing Overview</h2>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300, marginBottom: 20 }}>
                   Tree service pricing varies based on tree size, number of trees, access, and scope of work. General ranges for the Chicago area:
                 </p>
-                <div className="bg-navy-50 border border-navy-200 rounded-lg p-5 text-sm text-gray-700 space-y-2">
-                  <div className="flex justify-between border-b border-navy-100 pb-2">
-                    <span>Small tree trimming (under 25 ft)</span>
-                    <span className="font-semibold">$150 – $300</span>
-                  </div>
-                  <div className="flex justify-between border-b border-navy-100 pb-2">
-                    <span>Medium tree trimming (25–50 ft)</span>
-                    <span className="font-semibold">$300 – $600</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Large tree trimming (50+ ft)</span>
-                    <span className="font-semibold">$600 – $1,200+</span>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-500 mt-2">All pricing includes full cleanup. <Link href="/request-quote" className="text-orange-600 underline">Request a free quote</Link> for your specific trees.</p>
+                <table style={{ width: '100%', borderCollapse: 'collapse', background: 'var(--white)', border: '1px solid var(--line)', borderRadius: 4, overflow: 'hidden', boxShadow: '0 1px 4px rgba(0,0,0,.05)' }}>
+                  <thead>
+                    <tr>
+                      {['Service', 'Typical Price'].map((h) => (
+                        <th key={h} style={{ background: 'var(--green-dark)', color: '#fff', padding: '14px 18px', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', textAlign: 'left' }}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ['Small tree trimming (under 25 ft)', '$150 – $300'],
+                      ['Medium tree trimming (25–50 ft)', '$300 – $600'],
+                      ['Large tree trimming (50+ ft)', '$600 – $1,200+'],
+                    ].map((row, ri) => (
+                      <tr key={ri}>
+                        {row.map((cell, ci) => (
+                          <td key={ci} style={{ padding: '13px 18px', borderBottom: ri < 2 ? '1px solid var(--line)' : 'none', fontSize: 14, color: ci === 1 ? 'var(--green)' : 'var(--text-mid)', fontWeight: ci === 1 ? 700 : 400, background: ri % 2 === 0 ? 'var(--white)' : 'var(--green-pale)' }}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 10 }}>All pricing includes full cleanup. <Link href="/request-quote" style={{ color: 'var(--green)', fontWeight: 600 }}>Request a free quote</Link> for your specific trees.</p>
               </div>
 
-              <FAQAccordion items={FAQ_TREE} title="Tree Service FAQs" />
+              <div className="eyebrow">Common Questions</div>
+              <FAQAccordion items={FAQ_TREE} title="" />
             </div>
 
-            <aside className="space-y-6">
-              <div className="bg-navy-900 text-white rounded-xl p-6">
-                <h3 className="font-display text-xl font-bold mb-3">Get a Free Estimate</h3>
-                <p className="text-navy-300 text-sm mb-4">Tell us about your trees and we&apos;ll get back to you with a fair, competitive quote.</p>
-                <Link href="/request-quote" className="btn-primary w-full justify-center mb-3 text-sm">
+            <aside style={{ position: 'sticky', top: 24 }}>
+              <div style={{ background: 'var(--green-dark)', borderRadius: 4, padding: '28px 24px', marginBottom: 20 }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 10 }}>Get a Free Estimate</h3>
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,.55)', lineHeight: 1.6, marginBottom: 18 }}>Tell us about your trees and we&apos;ll get back to you with a fair, competitive quote.</p>
+                <Link href="/request-quote" className="btn btn-solid" style={{ width: '100%', justifyContent: 'center', marginBottom: 10, background: 'var(--green-mid)', borderColor: 'var(--green-mid)' }}>
                   Request Free Estimate
                 </Link>
-                <a href="tel:+13125550188" className="btn-outline-white w-full justify-center text-sm">
-                  📞 (312) 555-0188
+                <a href={PHONE_HREF} className="btn btn-white-outline" style={{ width: '100%', justifyContent: 'center', fontSize: 13 }}>
+                  {PHONE}
                 </a>
               </div>
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-5">
-                <h3 className="font-semibold text-orange-900 mb-2">⛈️ Storm Damage?</h3>
-                <p className="text-orange-800 text-sm mb-3">Call us immediately for emergency tree service. We prioritize storm response.</p>
-                <a href="tel:+13125550188" className="text-orange-700 font-bold text-sm underline">(312) 555-0188</a>
+
+              <div style={{ background: 'var(--green-pale)', border: '1px solid var(--line)', borderRadius: 4, padding: '22px 20px', marginBottom: 20 }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 8 }}>⛈️ Storm Damage?</h3>
+                <p style={{ fontSize: 13, color: 'var(--text-soft)', lineHeight: 1.55, marginBottom: 12 }}>Call us immediately for emergency tree service. We prioritize storm response.</p>
+                <a href={PHONE_HREF} style={{ fontSize: 13, color: 'var(--green)', fontWeight: 700 }}>{PHONE}</a>
               </div>
-              <div className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-display text-lg font-bold text-navy-900 mb-3">Related Services</h3>
-                <ul className="space-y-2">
+
+              <div style={{ background: 'var(--white)', border: '1px solid var(--line)', borderRadius: 4, padding: '24px 22px' }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 14 }}>Related Services</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {[
                     { href: "/tree-removal", label: "Tree Removal" },
                     { href: "/stump-grinding", label: "Stump Grinding" },
                     { href: "/stump-removal", label: "Stump Removal" },
                   ].map((s) => (
-                    <li key={s.href}>
-                      <Link href={s.href} className="text-sm text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1">
-                        → {s.label}
-                      </Link>
+                    <li key={s.href} style={{ padding: '5px 0' }}>
+                      <Link href={s.href} style={{ fontSize: 13, color: 'var(--green)', fontWeight: 600 }}>&rsaquo; {s.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -142,8 +153,8 @@ export default function TreeServicePage() {
         </div>
       </section>
 
-      <section className="py-12 bg-brand-light">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="section section-warm">
+        <div className="container">
           <ServiceAreaGrid areas={TREE_AREAS} title="Tree Service Areas" />
         </div>
       </section>

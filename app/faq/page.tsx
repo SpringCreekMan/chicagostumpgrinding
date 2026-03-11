@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CTABanner } from "@/components/UIComponents";
 import FAQAccordion from "@/components/FAQAccordion";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Stump Grinding FAQ | Common Questions Answered",
@@ -76,36 +76,40 @@ const FAQS_TREE = [
 export default function FAQPage() {
   return (
     <>
-      <section className="bg-navy-900 py-14">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-black text-white mb-4">
+      {/* Page header */}
+      <section style={{ position: 'relative', background: 'var(--green-deep)', padding: '64px 0', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 900px 600px at 75% 30%, rgba(45,122,65,.35) 0%, transparent 60%), linear-gradient(175deg, #071a0d 0%, #0d2714 35%, #143f20 65%, #1a5028 100%)' }} />
+        <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
+          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 700, color: '#fff', letterSpacing: '-.02em', marginBottom: 12 }}>
             Frequently Asked Questions
           </h1>
-          <p className="text-navy-300 text-lg">
+          <p style={{ fontSize: 17, color: 'rgba(255,255,255,.6)', fontWeight: 300, maxWidth: 560, margin: '0 auto' }}>
             Everything you want to know about stump grinding, stump removal, and tree service in Chicago and suburbs.
           </p>
         </div>
       </section>
 
-      <section className="py-14 bg-white">
-        <div className="max-w-3xl mx-auto px-4 space-y-12">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-navy-900 mb-6">Stump Grinding & Removal</h2>
+      <section className="section">
+        <div className="container" style={{ maxWidth: 760 }}>
+          <div style={{ marginBottom: 52 }}>
+            <div className="eyebrow">Stump Services</div>
+            <h2 className="section-h2">Stump Grinding &amp; Removal</h2>
             <FAQAccordion items={FAQS_GRINDING} title="" showSchema />
           </div>
-          <div>
-            <h2 className="font-display text-2xl font-bold text-navy-900 mb-6">Tree Service & Removal</h2>
+          <div style={{ marginBottom: 52 }}>
+            <div className="eyebrow">Tree Care</div>
+            <h2 className="section-h2">Tree Service &amp; Removal</h2>
             <FAQAccordion items={FAQS_TREE} title="" showSchema={false} />
           </div>
 
-          <div className="bg-brand-light rounded-xl p-6 border border-gray-200 text-center">
-            <p className="text-gray-700 mb-4">Still have questions? We&apos;re happy to help.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/contact" className="btn-primary justify-center">
+          <div style={{ background: 'var(--green-pale)', borderRadius: 4, padding: 28, border: '1px solid var(--line)', textAlign: 'center' }}>
+            <p style={{ fontSize: 15, color: 'var(--text-mid)', marginBottom: 18 }}>Still have questions? We&apos;re happy to help.</p>
+            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href="/contact" className="btn btn-solid" style={{ padding: '12px 24px' }}>
                 Contact Us
               </Link>
-              <a href="tel:+13125550188" className="btn-secondary justify-center">
-                📞 (312) 555-0188
+              <a href={PHONE_HREF} className="btn btn-outline" style={{ padding: '12px 24px' }}>
+                {PHONE}
               </a>
             </div>
           </div>
