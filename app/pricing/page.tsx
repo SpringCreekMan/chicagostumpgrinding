@@ -63,6 +63,11 @@ export default function PricingPage() {
             </table>
           </div>
 
+          <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 32 }}>
+            <img src="/images/stump-after-grind.jpg" alt="Clean backyard after professional stump grinding — wood chips flush with lawn" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, fontStyle: 'italic' }}>After: a freshly ground stump, flush with the surrounding lawn.</p>
+          </div>
+
           <div style={{ marginTop: 36, background: 'var(--green-pale)', borderRadius: 4, padding: 28, border: '1px solid var(--line)' }}>
             <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 16 }}>What Affects Your Price?</h3>
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

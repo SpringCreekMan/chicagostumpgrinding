@@ -173,6 +173,10 @@ export default function StumpGrindingPage() {
                   All prices include cleanup. View our full <Link href="/pricing" style={{ color: 'var(--green)', fontWeight: 600 }}>pricing page</Link> or{" "}
                   <Link href="/request-quote" style={{ color: 'var(--green)', fontWeight: 600 }}>request a free quote</Link>.
                 </p>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 24 }}>
+                  <img src="/images/stump-after-grind.jpg" alt="Clean backyard after professional stump grinding — wood chips flush with lawn" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                  <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, fontStyle: 'italic' }}>After: a freshly ground stump, flush with the surrounding lawn.</p>
+                </div>
               </div>
 
               <div>

@@ -67,6 +67,9 @@ export default function TreeRemovalPage() {
                 <p style={{ fontSize: '14.5px', color: 'var(--text-soft)', lineHeight: 1.72, fontWeight: 300, marginBottom: 20 }}>
                   Tree removal is sometimes the only safe option. Our experienced team can assess any tree and give you an honest evaluation — and we&apos;ll always tell you if the tree can be saved with service rather than removed.
                 </p>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginBottom: 24 }}>
+                  <img src="/images/arborist-trimming.jpg" alt="Professional arborist safely removing a tree branch with chainsaw and harness" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {[
                     { icon: "💀", title: "Dead or Dying Trees", desc: "Dead trees are a serious hazard. Falling limbs or the whole tree can cause significant property damage or injury." },
@@ -89,6 +92,9 @@ export default function TreeRemovalPage() {
               <div style={{ marginBottom: 48 }}>
                 <div className="eyebrow">Our Process</div>
                 <h2 className="section-h2">Our Tree Removal Process</h2>
+                <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 16, marginBottom: 24 }}>
+                  <img src="/images/tree-removal-bucking.jpg" alt="Crew member cutting a felled tree trunk into rounds with a chainsaw" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
                 <ol style={{ listStyle: 'none', padding: 0, margin: 0, marginTop: 20 }}>
                   {[
                     { n: "1", title: "Free Assessment & Quote", desc: "We evaluate the tree, assess risks and access, and provide a written quote before any work." },
