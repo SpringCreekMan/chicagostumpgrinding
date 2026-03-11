@@ -73,6 +73,7 @@ export default function HomePage() {
         headline="Chicago Stump Grinding & Stump Removal"
         subheadline="Fast, professional stump grinding and tree service across Chicago and surrounding suburbs. Free estimates. Same-week service."
         showTrustBadges
+        backgroundImage="/images/hero-home.jpg"
       />
 
       {/* SERVICES — 1px separator grid matching mockup */}

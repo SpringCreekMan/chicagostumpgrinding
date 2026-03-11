@@ -54,6 +54,7 @@ export default function TreeRemovalPage() {
         subheadline="Dead, damaged, or dangerous trees removed safely and efficiently. Full cleanup included. Stump grinding available as an add-on."
         variant="service"
         badgeText="Dead & Hazard Tree Removal"
+        backgroundImage="/images/hero-tree-service.jpg"
       />
 
       <section className="section">

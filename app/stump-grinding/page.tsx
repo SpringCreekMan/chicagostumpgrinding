@@ -76,6 +76,7 @@ export default function StumpGrindingPage() {
         subheadline="We grind stumps of all sizes below grade — fast, clean, and affordable. Fully insured with same-week scheduling available."
         variant="service"
         badgeText="Our Most Popular Service"
+        backgroundImage="/images/hero-stump-grinding.jpg"
       />
 
       {/* Main content */}

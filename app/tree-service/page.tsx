@@ -51,6 +51,7 @@ export default function TreeServicePage() {
         subheadline="Expert tree trimming, pruning, crown reduction, and maintenance to keep your trees healthy and your property safe."
         variant="service"
         badgeText="Tree Trimming & Care"
+        backgroundImage="/images/hero-tree-service.jpg"
       />
 
       <section className="section">
