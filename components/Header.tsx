@@ -43,23 +43,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, minWidth: 0 }}>
-            <div style={{
-              width: 40, height: 40,
-              background: 'var(--green)',
-              borderRadius: 4,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              flexShrink: 0,
-            }}>
-              <TreeIcon />
-            </div>
-            <div style={{ minWidth: 0 }}>
-              <span style={{ fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--green-dark)', letterSpacing: '-.01em', display: 'block', lineHeight: 1.2, whiteSpace: 'nowrap' }}>
-                {SITE_NAME}
-              </span>
-              <span className="header-logo-text" style={{ fontSize: '10.5px', color: 'var(--text-soft)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginTop: 2 }}>
-                Chicago Tree &amp; Stump Specialists
-              </span>
-            </div>
+            <img src="/images/logo.svg" alt={SITE_NAME} style={{ height: 44, width: 'auto', flexShrink: 0 }} />
           </Link>
 
           {/* Desktop Nav */}
@@ -143,15 +127,6 @@ function PhoneIcon({ size = 13 }: { size?: number }) {
   return (
     <svg width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
       <path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.128.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L9.17 9.91a16 16 0 006.92 6.92l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
-    </svg>
-  );
-}
-
-function TreeIcon() {
-  return (
-    <svg width="24" height="24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" viewBox="0 0 24 24">
-      <path d="M12 22V12M12 12C12 7 7 4 3 6c4 0 7 3 9 6M12 12c0-5 5-8 9-6-4 0-7 3-9 6"/>
-      <path d="M8 17c1.5-1 3-1.5 4-1.5s2.5.5 4 1.5"/>
     </svg>
   );
 }
