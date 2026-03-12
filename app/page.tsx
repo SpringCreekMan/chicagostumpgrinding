@@ -148,14 +148,18 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 40 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20, marginTop: 40 }}>
             <div style={{ borderRadius: 4, overflow: 'hidden' }}>
-              <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment used on every job" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src="/images/free-estimate-measure.jpg" alt="Arborist measuring a tree stump diameter with tape measure while writing an estimate on clipboard" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
+              <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 2: Free on-site estimate — no obligation.</p>
+            </div>
+            <div style={{ borderRadius: 4, overflow: 'hidden' }}>
+              <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment used on every job" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
               <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 3: Commercial Vermeer equipment on every job.</p>
             </div>
             <div style={{ borderRadius: 4, overflow: 'hidden' }}>
-              <img src="/images/cleanup-wood-chips.jpg" alt="Crew member raking wood chips and debris after stump grinding — full cleanup included" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 4: Full cleanup of chips and debris — always included.</p>
+              <img src="/images/cleanup-wood-chips.jpg" alt="Crew member raking wood chips and debris after stump grinding — full cleanup included" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
+              <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 4: Full cleanup — always included.</p>
             </div>
           </div>
         </div>
