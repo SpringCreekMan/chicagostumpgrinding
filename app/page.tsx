@@ -148,6 +148,10 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 40, maxWidth: 640, marginLeft: 'auto', marginRight: 'auto' }}>
+            <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment used on every job" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Commercial Vermeer equipment on every job — fast, precise, and gentle on your yard.</p>
+          </div>
         </div>
       </section>
 

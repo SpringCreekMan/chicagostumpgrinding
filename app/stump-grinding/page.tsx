@@ -220,6 +220,14 @@ export default function StumpGrindingPage() {
                 </ul>
               </div>
 
+              <div style={{ borderRadius: 4, overflow: 'hidden', border: '1px solid var(--line)', marginBottom: 20 }}>
+                <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <div style={{ padding: '16px 18px', background: 'var(--white)' }}>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 14, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 4 }}>Our Equipment</h3>
+                  <p style={{ fontSize: 12, color: 'var(--text-soft)', lineHeight: 1.55 }}>Commercial Vermeer tracked grinders — fast, powerful, and gentle on your lawn.</p>
+                </div>
+              </div>
+
               <div style={{ background: 'var(--white)', border: '1px solid var(--line)', borderRadius: 4, padding: '24px 22px' }}>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 16, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 14 }}>Related Services</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>

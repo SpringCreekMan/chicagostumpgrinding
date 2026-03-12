@@ -90,6 +90,19 @@ export default function PricingPage() {
             </div>
           </div>
 
+          <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 36, background: 'var(--green-pale)', border: '1px solid var(--line)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0 }}>
+            <div style={{ overflow: 'hidden' }}>
+              <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment used on every job" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            </div>
+            <div style={{ padding: '32px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div className="eyebrow">Our Equipment</div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 700, color: 'var(--green-dark)', marginBottom: 10 }}>Commercial-Grade Vermeer Grinders</h3>
+              <p style={{ fontSize: '13.5px', color: 'var(--text-soft)', lineHeight: 1.7 }}>
+                We use tracked Vermeer stump grinders — the same commercial equipment used by municipalities and utility companies. More power means faster work, cleaner results, and less disruption to your yard.
+              </p>
+            </div>
+          </div>
+
           <div style={{ marginTop: 36, textAlign: 'center' }}>
             <p style={{ fontSize: 15, color: 'var(--text-mid)', marginBottom: 18 }}>Ready for a real quote? We provide free, written estimates — no pressure.</p>
             <Link href="/request-quote" className="btn btn-solid" style={{ padding: '13px 28px', fontSize: 15 }}>
