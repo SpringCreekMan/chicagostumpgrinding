@@ -44,6 +44,14 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, minWidth: 0 }}>
             <img src="/images/logo.svg" alt={SITE_NAME} style={{ height: 44, width: 'auto', flexShrink: 0 }} />
+            <div style={{ minWidth: 0 }}>
+              <span style={{ fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--green-dark)', letterSpacing: '-.01em', display: 'block', lineHeight: 1.2, whiteSpace: 'nowrap' }}>
+                {SITE_NAME}
+              </span>
+              <span className="header-logo-text" style={{ fontSize: '10.5px', color: 'var(--text-soft)', letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginTop: 2 }}>
+                Chicago Tree &amp; Stump Specialists
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
