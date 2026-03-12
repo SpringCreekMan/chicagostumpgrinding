@@ -155,7 +155,7 @@ export default function HomePage() {
             </div>
             <div style={{ borderRadius: 4, overflow: 'hidden' }}>
               <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment used on every job" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
-              <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 3: Commercial Vermeer equipment on every job.</p>
+              <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 3: Professional equipment on every job.</p>
             </div>
             <div style={{ borderRadius: 4, overflow: 'hidden' }}>
               <img src="/images/cleanup-wood-chips.jpg" alt="Crew member raking wood chips and debris after stump grinding — full cleanup included" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
