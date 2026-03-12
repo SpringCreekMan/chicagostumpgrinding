@@ -5,10 +5,10 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     // Validate required fields
-    const { name, phone, email } = body;
-    if (!name || !phone || !email) {
+    const { name, phone } = body;
+    if (!name || !phone) {
       return NextResponse.json(
-        { success: false, error: "Name, phone, and email are required." },
+        { success: false, error: "Name and phone number are required." },
         { status: 400 }
       );
     }
