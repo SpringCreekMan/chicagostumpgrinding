@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import { CTABanner } from "@/components/UIComponents";
 import Testimonials from "@/components/Testimonials";
 import FAQAccordion from "@/components/FAQAccordion";
 import {
@@ -12,6 +11,8 @@ import {
   HOME_FAQ,
   SITE_NAME,
   SITE_URL,
+  PHONE,
+  PHONE_HREF,
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -177,6 +178,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SATISFIED CUSTOMER */}
+      <section style={{ padding: '56px 0', background: 'var(--bg-soft)' }}>
+        <div className="container" style={{ maxWidth: 800, textAlign: 'center' }}>
+          <div className="eyebrow">Happy Homeowners</div>
+          <h2 className="section-h2" style={{ marginLeft: 'auto', marginRight: 'auto' }}>See the Difference</h2>
+          <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 28, marginBottom: 20 }}>
+            <img src="/images/satisfied-walkthrough.jpg" alt="Satisfied homeowners smiling as they inspect the clean wood chip bed where their tree stump was ground down" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+          <p style={{ fontSize: 14, color: 'var(--text-soft)', fontWeight: 300, lineHeight: 1.7 }}>
+            The best part of every job — walking homeowners through the finished result. Clean, flat, and ready for whatever comes next.
+          </p>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <Testimonials testimonials={TESTIMONIALS} />
 
@@ -206,10 +221,23 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <CTABanner
-        headline="Get Your Free Stump Grinding Quote Today"
-        subtext="No obligation. We respond fast and provide upfront, honest pricing."
-      />
+      <section style={{ position: 'relative', padding: '70px 0', textAlign: 'center', overflow: 'hidden', background: 'var(--green-dark)' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/satisfied-walkthrough.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 800px 400px at 50% 100%, rgba(45,122,65,.3) 0%, transparent 60%)', pointerEvents: 'none' }} />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ color: '#7ecf8e', fontSize: 11, textTransform: 'uppercase', letterSpacing: '.14em', fontWeight: 700, marginBottom: 14 }}>Get Started Today</div>
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 700, color: '#fff', letterSpacing: '-.02em', marginBottom: 14, lineHeight: 1.2 }}>
+            Get Your Free Stump Grinding Quote Today
+          </h2>
+          <p style={{ fontSize: 17, color: 'rgba(255,255,255,.6)', fontWeight: 300, marginBottom: 36 }}>
+            No obligation. We respond fast and provide upfront, honest pricing.
+          </p>
+          <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/request-quote" className="btn btn-white">Request Free Estimate</Link>
+            <a href={PHONE_HREF} className="btn btn-white-outline">{PHONE}</a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
