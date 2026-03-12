@@ -4,5 +4,319 @@
   "outputDirectory": ".next",
   "devCommand": "next dev",
   "installCommand": "npm install",
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "chicagolandstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.chicagolandstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "chicagostumpremoval.com" }],
+      "destination": "https://chicagostumpgrinding.com/stump-removal-chicago",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.chicagostumpremoval.com" }],
+      "destination": "https://chicagostumpgrinding.com/stump-removal-chicago",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "chicagotreespecialists.com" }],
+      "destination": "https://chicagostumpgrinding.com/tree-service-chicago",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.chicagotreespecialists.com" }],
+      "destination": "https://chicagostumpgrinding.com/tree-service-chicago",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "napervillestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/naperville-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.napervillestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/naperville-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "napervillestumpremoval.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/naperville-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.napervillestumpremoval.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/naperville-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "hinsdalestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/hinsdale-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.hinsdalestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/hinsdale-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "downersgrovestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/downers-grove-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.downersgrovestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/downers-grove-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "glenellynstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/glen-ellyn-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.glenellynstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/glen-ellyn-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "oakbrookstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/oak-brook-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.oakbrookstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/oak-brook-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "westernspringsstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/western-springs-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.westernspringsstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/western-springs-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "lagrangestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/la-grange-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.lagrangestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/la-grange-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "burrridgestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/burr-ridge-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.burrridgestumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/burr-ridge-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "elmhurststumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/elmhurst-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.elmhurststumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/elmhurst-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "wheatonstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/wheaton-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.wheatonstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/wheaton-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "darienstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/darien-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.darienstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/darien-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "lemontstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/lemont-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.lemontstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/lemont-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "homerglenstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/homer-glen-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.homerglenstumpgrinding.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/homer-glen-stump-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "hinsdaletreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/hinsdale-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.hinsdaletreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/hinsdale-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "glenellyntreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/glen-ellyn-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.glenellyntreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/glen-ellyn-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "oakbrooktreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/oak-brook-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.oakbrooktreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/oak-brook-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "westernspringstreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/western-springs-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.westernspringstreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/western-springs-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "burrridgetreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/burr-ridge-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.burrridgetreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/burr-ridge-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "elmhursttreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/elmhurst-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.elmhursttreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/elmhurst-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "wheatontreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/wheaton-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.wheatontreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/wheaton-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "lemonttreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/lemont-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.lemonttreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/lemont-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "homerglentreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/homer-glen-tree-service",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.homerglentreeservice.com" }],
+      "destination": "https://chicagostumpgrinding.com/service-areas/homer-glen-tree-service",
+      "permanent": true
+    }
+  ]
 }
