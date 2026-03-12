@@ -148,9 +148,15 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div style={{ borderRadius: 4, overflow: 'hidden', marginTop: 40, maxWidth: 640, marginLeft: 'auto', marginRight: 'auto' }}>
-            <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment used on every job" style={{ width: '100%', height: 'auto', display: 'block' }} />
-            <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Commercial Vermeer equipment on every job — fast, precise, and gentle on your yard.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 40 }}>
+            <div style={{ borderRadius: 4, overflow: 'hidden' }}>
+              <img src="/images/vermeer-sc70tx.jpg" alt="Vermeer SC70TX tracked stump grinder — commercial-grade equipment used on every job" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 3: Commercial Vermeer equipment on every job.</p>
+            </div>
+            <div style={{ borderRadius: 4, overflow: 'hidden' }}>
+              <img src="/images/cleanup-wood-chips.jpg" alt="Crew member raking wood chips and debris after stump grinding — full cleanup included" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <p style={{ fontSize: 12, color: 'var(--text-soft)', marginTop: 8, textAlign: 'center', fontStyle: 'italic' }}>Step 4: Full cleanup of chips and debris — always included.</p>
+            </div>
           </div>
         </div>
       </section>
